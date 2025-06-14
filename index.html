@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rayan Pinto - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Tailwind Configuration with Your Friend's Color Scheme -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "bg-color": "#081b29",
+              "second-bg-color": "#112e42",
+              "text-color": "#ededed",
+              "main-color": "#00abf0",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- React and ReactDOM CDN -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- Babel for JSX -->
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.22.5/babel.min.js"></script>
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts (Poppins) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // Navbar Component
+      function Navbar() {
+        return (
+          <nav className="bg-bg-color text-text-color p-4 fixed w-full top-0 z-10 shadow-lg flex justify-between items-center">
+            <div className="container mx-auto flex justify-between items-center">
+              <h1 className="text-2xl font-bold font-poppins">Rayan Pinto</h1>
+              <div className="space-x-4 font-poppins">
+                <a
+                  href="#home"
+                  className="hover:text-main-color transition duration-300"
+                >
+                  Home
+                </a>
+                <a
+                  href="#about"
+                  className="hover:text-main-color transition duration-300"
+                >
+                  About Me
+                </a>
+                <a
+                  href="#education"
+                  className="hover:text-main-color transition duration-300"
+                >
+                  Education
+                </a>
+                <a
+                  href="#skills"
+                  className="hover:text-main-color transition duration-300"
+                >
+                  Skills
+                </a>
+                <a
+                  href="#projects"
+                  className="hover:text-main-color transition duration-300"
+                >
+                  Projects
+                </a>
+                <a
+                  href="#awards"
+                  className="hover:text-main-color transition duration-300"
+                >
+                  Awards
+                </a>
+                <a
+                  href="#contact"
+                  className="hover:text-main-color transition duration-300"
+                >
+                  Contact Me
+                </a>
+              </div>
+            </div>
+          </nav>
+        );
+      }
+
+      // Home Section with Dynamic Neuron Animation
+      function Home() {
+        return (
+          <section
+            id="home"
+            className="min-h-screen flex items-center justify-center font-poppins bg-bg-color relative overflow-hidden"
+          >
+            {/* Neuron Animation Background */}
+            <div className="neuron-animation">
+              {/* Neuron Nodes */}
+              <span className="neuron-node node-1"></span>
+              <span className="neuron-node node-2"></span>
+              <span className="neuron-node node-3"></span>
+              <span className="neuron-node node-4"></span>
+              <span className="neuron-node node-5"></span>
+              <span className="neuron-node node-6"></span>
+              <span className="neuron-node node-7"></span>
+              <span className="neuron-node node-8"></span>
+              <span className="neuron-node node-9"></span>
+              <span className="neuron-node node-10"></span>
+              <span className="neuron-node node-11"></span>
+              <span className="neuron-node node-12"></span>
+              <span className="neuron-node node-13"></span>
+              <span className="neuron-node node-14"></span>
+              <span className="neuron-node node-15"></span>
+              {/* Container for Dynamic Connections */}
+              <div className="connections-container"></div>
+            </div>
+
+            {/* Content Section */}
+            <div className="bg-second-bg-color bg-opacity-70 py-8 px-6 rounded-lg text-center z-10">
+              <h1 className="text-5xl font-bold text-text-color mb-4 animate-fadeIn">
+                Hello! I'm <span className="text-main-color">Rayan Pinto</span>
+              </h1>
+              <p className="text-2xl text-text-color mb-4 animate-fadeIn animation-delay-200">
+                Full Stack Developer
+              </p>
+              <p className="text-lg text-text-color mb-6 animate-fadeIn animation-delay-500">
+                Crafting seamless and visually stunning web experiences with
+                modern technologies.
+              </p>
+
+              <div className="flex flex-col items-center space-y-6">
+                <a
+                  href="https://drive.google.com/uc?export=download&id=16YsbnYR6mWeIarf8qWLrxUYkz6vnImVp"
+                  download="Rayan_Pinto_Resume.pdf"
+                  className="bg-main-color text-bg-color px-6 py-3 rounded-lg font-semibold hover:bg-bg-color hover:text-main-color border-2 border-main-color transition-all duration-500 animate-fadeIn animation-delay-500"
+                >
+                  Download Resume
+                </a>
+
+                <div className="flex justify-center space-x-4">
+                  <a
+                    href="https://www.linkedin.com/in/rayan-pinto-0848892a5/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-linkedin text-3xl text-main-color hover:text-text-color transition"></i>
+                  </a>
+                  <a
+                    href="https://github.com/RayanPinto"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-github text-3xl text-main-color hover:text-text-color transition"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      }
+
+      // About Me Section
+      function About() {
+        return (
+          <section id="about" className="py-16 bg-second-bg-color font-poppins">
+            <div className="container mx-auto px-4">
+              <h2 className="text-4xl font-bold text-center text-text-color mb-8 animate-fadeIn">
+                About Me
+              </h2>
+              <div className="flex flex-col items-center">
+                <div className="relative w-48 h-48 mb-6">
+                  <div className="absolute inset-0 border-4 border-main-color rounded-full animate-spin-slow"></div>
+                  <img
+                    src="about.jpg"
+                    alt="Rayan Pinto"
+                    className="w-full h-full rounded-full object-cover border-2 border-main-color"
+                  />
+                </div>
+                <div className="text-center max-w-2xl">
+                  <h3 className="text-2xl font-semibold text-text-color mb-4 animate-fadeIn">
+                    Full Stack Developer
+                  </h3>
+                  <p className="text-lg text-text-color animate-fadeIn animation-delay-200">
+                    Hi, I'm Rayan Pinto, a passionate frontend developer with a
+                    knack for creating visually stunning and user-friendly
+                    websites. I thrive on collaboration and innovation,
+                    constantly seeking to push the boundaries of web
+                    development.
+                  </p>
+                  <a
+                    href="#contact"
+                    className="mt-6 inline-block bg-main-color text-bg-color px-6 py-3 rounded-lg font-semibold hover:bg-bg-color hover:text-main-color border-2 border-main-color transition-all duration-500"
+                  >
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      }
+
+      // Education Section
+      function Education() {
+        const educationData = [
+          {
+            year: "2020-2022",
+            title: "PCMC - St. Aloysius PU College",
+            description:
+              "I completed my Pre-University education at St. Aloysius PU College, specializing in PCM with Computer Science.",
+            marks: "Marks: 97%",
+            cgpa: "",
+          },
+          {
+            year: "2022-2026",
+            title: "B.E in Computer Science And Business Systems - SJEC",
+            description:
+              "I am currently pursuing a Bachelor's degree in Computer Science and Business Systems (CSBS) at St. Joseph's Engineering College.",
+            marks: "",
+            cgpa: "CGPA: 9.25 (as of 2025)",
+          },
+        ];
+
+        return (
+          <section id="education" className="py-16 bg-bg-color font-poppins">
+            <div className="container mx-auto px-4">
+              <h2 className="text-4xl font-bold text-center text-text-color mb-8 animate-fadeIn">
+                My Journey
+              </h2>
+              <div className="flex flex-wrap gap-8 justify-center">
+                {educationData.map((edu, index) => (
+                  <div
+                    key={index}
+                    className="relative flex-1 min-w-[300px] max-w-[400px] animate-fadeIn"
+                    style={{ animationDelay: `${index * 200}ms` }}
+                  >
+                    <div className="absolute left-0 top-0 w-1 h-full bg-main-color"></div>
+                    <div className="absolute left-[-10px] top-0 w-5 h-5 bg-main-color rounded-full"></div>
+                    <div className="ml-8 p-4 border-2 border-main-color rounded-lg hover:bg-second-bg-color transition-all duration-500">
+                      <p className="text-main-color text-lg font-semibold">
+                        <i className="far fa-calendar-alt mr-2"></i>
+                        {edu.year}
+                      </p>
+                      <h3 className="text-xl font-semibold text-text-color mt-2">
+                        {edu.title}
+                      </h3>
+                      <p className="text-text-color mt-2">{edu.description}</p>
+                      {edu.marks && (
+                        <p className="text-text-color mt-1">{edu.marks}</p>
+                      )}
+                      {edu.cgpa && (
+                        <p className="text-text-color mt-1">{edu.cgpa}</p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      }
+
+      // Skills Section
+      function Skills() {
+        const skills = [
+          "C",
+          "C++",
+          "Python",
+          "Javascript",
+          "Java",
+          "NodeJS",
+          "Flutter",
+          "Web Development",
+          "Machine Learning",
+        ];
+        return (
+          <section
+            id="skills"
+            className="py-16 bg-second-bg-color font-poppins"
+          >
+            <div className="container mx-auto px-4">
+              <h2 className="text-4xl font-bold text-center text-text-color mb-8 animate-fadeIn">
+                My Skills
+              </h2>
+              <div className="flex overflow-x-auto space-x-4 pb-4">
+                {skills.map((skill, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 w-48 text-center bg-bg-color p-4 rounded-lg shadow-lg hover:-translate-y-2 transition-transform duration-300 animate-fadeIn"
+                    style={{ animationDelay: `${index * 200}ms` }}
+                  >
+                    <h3 className="text-xl font-semibold text-text-color">
+                      {skill}
+                    </h3>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      }
+
+      // Projects Section
+      function Projects() {
+        const projects = [
+          {
+            name: "Plant Disease Prediction Website",
+            description:
+              "Trained a machine learning model to predict plant diseases and deployed it using Streamlit as the frontend interface.",
+          },
+          {
+            name: "E-Commerce App using Flutter & NodeJS",
+            description:
+              "Developed a Flutter application with a Node.js backend that allows users to buy and sell products seamlessly.",
+          },
+          {
+            name: "Fruits & Vegetable Recognition",
+            description:
+              "Trained a machine learning model to recognize and classify different fruits and vegetables based on image data.",
+          },
+        ];
+
+        return (
+          <section id="projects" className="py-16 bg-bg-color font-poppins">
+            <div className="container mx-auto px-4">
+              <h2 className="text-4xl font-bold text-center text-text-color mb-8 animate-fadeIn">
+                Projects
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {projects.map((project, index) => (
+                  <div
+                    key={index}
+                    className="bg-second-bg-color p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 animate-fadeIn"
+                    style={{ animationDelay: `${index * 200}ms` }}
+                  >
+                    <h3 className="text-xl font-semibold text-text-color mb-2">
+                      {project.name}
+                    </h3>
+                    <p className="text-text-color">{project.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      }
+
+      // Awards and Achievements Section
+      function Awards() {
+        const awards = [
+          {
+            title: "Winner - HacktoFuture 2.0",
+            description:
+              "Secured first place in HacktoFuture 2.0, a competitive hackathon focused on innovative tech solutions, held in 2024.",
+          },
+        ];
+
+        return (
+          <section id="awards" className="py-16 bg-bg-color font-poppins">
+            <div className="container mx-auto px-4">
+              <h2 className="text-4xl font-bold text-center text-text-color mb-8 animate-fadeIn">
+                Awards & Achievements
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {awards.map((award, index) => (
+                  <div
+                    key={index}
+                    className="bg-second-bg-color p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 animate-fadeIn"
+                    style={{ animationDelay: `${index * 200}ms` }}
+                  >
+                    <h3 className="text-xl font-semibold text-text-color mb-2">
+                      {award.title}
+                    </h3>
+                    <p className="text-text-color">{award.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      }
+
+      // Updated Contact Section
+      function Contact() {
+        return (
+          <section id="contact" className="py-16 bg-bg-color font-poppins">
+            <div className="container mx-auto px-4">
+              <h2 className="text-4xl font-bold text-center text-text-color mb-8 animate-fadeIn">
+                Contact Me!
+              </h2>
+              <div className="max-w-2xl mx-auto text-center">
+                <div className="bg-second-bg-color bg-opacity-70 py-8 px-6 rounded-lg">
+                  <div className="flex flex-col items-center space-y-4">
+                    <div className="flex items-center space-x-3">
+                      <i className="fas fa-phone text-2xl text-main-color"></i>
+                      <p className="text-lg text-text-color">9901898521</p>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <i className="fas fa-envelope text-2xl text-main-color"></i>
+                      <a
+                        href="mailto:rayanpinto9482@gmail.com"
+                        className="text-lg text-text-color hover:text-main-color transition duration-300"
+                      >
+                        rayanpinto9482@gmail.com
+                      </a>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <i className="fab fa-linkedin text-2xl text-main-color"></i>
+                      <a
+                        href="https://www.linkedin.com/in/rayan-pinto-0848892a5/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-lg text-text-color hover:text-main-color transition duration-300"
+                      >
+                        LinkedIn Profile
+                      </a>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <i className="fab fa-github text-2xl text-main-color"></i>
+                      <a
+                        href="https://github.com/RayanPinto"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-lg text-text-color hover:text-main-color transition duration-300"
+                      >
+                        GitHub Profile
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      }
+
+      // Footer Component
+      function Footer() {
+        return (
+          <footer className="bg-second-bg-color text-text-color p-4 text-center font-poppins">
+            <p>Copyright © 2025 by Rayan Pinto | All Rights Reserved.</p>
+            <a
+              href="#home"
+              className="inline-block mt-4 bg-main-color text-bg-color p-3 rounded-lg hover:bg-bg-color hover:text-main-color border-2 border-main-color transition-all duration-500"
+            >
+              <i className="fas fa-arrow-up"></i>
+            </a>
+          </footer>
+        );
+      }
+
+      // Main App Component
+      function App() {
+        React.useEffect(() => {
+          // Initial Setup
+          updateNeuronConnections();
+          // Update connections every 1.5 seconds
+          const intervalId = setInterval(updateNeuronConnections, 1500);
+
+          // Redraw on Resize
+          window.addEventListener("resize", drawNeuronConnections);
+          // Redraw Periodically to Account for Animation Movement
+          const drawIntervalId = setInterval(drawNeuronConnections, 100);
+
+          // Cleanup function
+          return () => {
+            clearInterval(intervalId);
+            clearInterval(drawIntervalId);
+            window.removeEventListener("resize", drawNeuronConnections);
+          };
+        }, []); // Empty dependency array means this runs once on mount
+
+        return (
+          <div>
+            <Navbar />
+            <Home />
+            <About />
+            <Education />
+            <Skills />
+            <Projects />
+            <Awards />
+            <Contact />
+            <Footer />
+          </div>
+        );
+      }
+
+      // Render the App
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+
+      // JavaScript for Dynamic Neuron Connections
+      function updateNeuronConnections() {
+        const container = document.querySelector(".connections-container");
+        if (!container) return;
+
+        // Clear existing connections
+        container.innerHTML = "";
+
+        // Get all neuron nodes
+        const nodes = document.querySelectorAll(".neuron-node");
+        const nodeArray = Array.from(nodes);
+        const numConnections = 12; // Number of connections to create
+
+        // Create new connections
+        const usedPairs = new Set();
+        for (let i = 0; i < numConnections; i++) {
+          // Randomly select two different nodes
+          let node1Index, node2Index;
+          do {
+            node1Index = Math.floor(Math.random() * nodeArray.length);
+            node2Index = Math.floor(Math.random() * nodeArray.length);
+          } while (
+            node1Index === node2Index ||
+            usedPairs.has(`${node1Index}-${node2Index}`) ||
+            usedPairs.has(`${node2Index}-${node1Index}`)
+          );
+
+          usedPairs.add(`${node1Index}-${node2Index}`);
+
+          // Create connection element
+          const conn = document.createElement("span");
+          conn.className = `neuron-connection conn-${node1Index + 1}-${
+            node2Index + 1
+          }`;
+          container.appendChild(conn);
+        }
+
+        // Draw the new connections
+        drawNeuronConnections();
+      }
+
+      function drawNeuronConnections() {
+        const connections = document.querySelectorAll(".neuron-connection");
+        connections.forEach((conn) => {
+          const [node1Num, node2Num] = conn.className
+            .match(/conn-(\d+)-(\d+)/)
+            .slice(1)
+            .map(Number);
+          const node1 = document.querySelector(`.node-${node1Num}`);
+          const node2 = document.querySelector(`.node-${node2Num}`);
+
+          if (node1 && node2) {
+            const rect1 = node1.getBoundingClientRect();
+            const rect2 = node2.getBoundingClientRect();
+
+            const x1 = rect1.left + rect1.width / 2;
+            const y1 = rect1.top + rect1.height / 2;
+            const x2 = rect2.left + rect2.width / 2;
+            const y2 = rect2.top + rect2.height / 2;
+
+            const length = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+            const angle = Math.atan2(y2 - y1, x2 - x1) * (180 / Math.PI);
+
+            conn.style.width = `${length}px`;
+            conn.style.left = `${x1}px`;
+            conn.style.top = `${y1}px`;
+            conn.style.transform = `rotate(${angle}deg)`;
+            conn.style.transformOrigin = "0 0";
+          }
+        });
+      }
+    </script>
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #081b29;
+        color: #ededed;
+        scroll-behavior: smooth;
+      }
+
+      /* Custom Animations for Content */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes spin-slow {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .animate-fadeIn {
+        animation: fadeIn 1s ease-in-out forwards;
+      }
+
+      .animation-delay-200 {
+        animation-delay: 200ms;
+      }
+
+      .animation-delay-500 {
+        animation-delay: 500ms;
+      }
+
+      .animate-spin-slow {
+        animation: spin-slow 8s linear infinite;
+      }
+
+      /* Neuron Animation Styles */
+      .neuron-animation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .neuron-node {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: #00abf0;
+        border-radius: 50%;
+        box-shadow: 0 0 15px #00abf0, 0 0 25px #00abf0;
+        animation: moveNeuron 8s ease-in-out infinite,
+          pulseNeuron 2s ease-in-out infinite;
+      }
+
+      .node-1 {
+        top: 10%;
+        left: 5%;
+        animation-delay: 0s;
+      }
+
+      .node-2 {
+        top: 20%;
+        left: 60%;
+        animation-delay: 0.5s;
+      }
+
+      .node-3 {
+        top: 50%;
+        left: 15%;
+        animation-delay: 1s;
+      }
+
+      .node-4 {
+        top: 65%;
+        left: 80%;
+        animation-delay: 1.5s;
+      }
+
+      .node-5 {
+        top: 30%;
+        left: 30%;
+        animation-delay: 2s;
+      }
+
+      .node-6 {
+        top: 75%;
+        left: 35%;
+        animation-delay: 2.5s;
+      }
+
+      .node-7 {
+        top: 40%;
+        left: 70%;
+        animation-delay: 3s;
+      }
+
+      .node-8 {
+        top: 60%;
+        left: 10%;
+        animation-delay: 3.5s;
+      }
+
+      .node-9 {
+        top: 15%;
+        left: 85%;
+        animation-delay: 4s;
+      }
+
+      .node-10 {
+        top: 45%;
+        left: 50%;
+        animation-delay: 4.5s;
+      }
+
+      .node-11 {
+        top: 80%;
+        left: 65%;
+        animation-delay: 5s;
+      }
+
+      .node-12 {
+        top: 25%;
+        left: 40%;
+        animation-delay: 5.5s;
+      }
+
+      .node-13 {
+        top: 55%;
+        left: 90%;
+        animation-delay: 6s;
+      }
+
+      .node-14 {
+        top: 70%;
+        left: 20%;
+        animation-delay: 6.5s;
+      }
+
+      .node-15 {
+        top: 35%;
+        left: 95%;
+        animation-delay: 7s;
+      }
+
+      .neuron-connection {
+        position: absolute;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #00abf0, transparent);
+        animation: pulseConnection 1.5s ease-in-out infinite;
+        opacity: 0.5;
+        transition: opacity 0.3s ease;
+      }
+
+      @keyframes moveNeuron {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(15px, -10px);
+        }
+        50% {
+          transform: translate(-10px, 15px);
+        }
+        75% {
+          transform: translate(10px, -15px);
+        }
+      }
+
+      @keyframes pulseNeuron {
+        0%,
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 15px #00abf0, 0 0 25px #00abf0;
+        }
+        50% {
+          transform: scale(1.3);
+          box-shadow: 0 0 20px #00abf0, 0 0 30px #00abf0;
+        }
+      }
+
+      @keyframes pulseConnection {
+        0%,
+        100% {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 0.9;
+        }
+      }
+    </style>
+  </body>
+</html>
