@@ -1,0 +1,9 @@
+This folder contains project assets including:
+- Project images (project1.jpg, project2.jpg, project3.jpg, project4.jpg)
+- Resume PDF (Rayan_Pinto_Resume.pdf)
+- Favicon (favicon.ico)
+- Any other media files
+
+Please add your actual project images and resume here.
+
+

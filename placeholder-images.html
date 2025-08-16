@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Placeholder Images Generator</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+      }
+      .project-card {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+      .project-card:hover {
+        transform: translateY(-5px);
+      }
+      .project-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+      }
+      .project-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 15px;
+      }
+      .project-description {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+      }
+      .tech-tag {
+        background: #667eea;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+      h1 {
+        text-align: center;
+        color: white;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+      .subtitle {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+      }
+      .instructions {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        color: white;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Project Placeholder Images</h1>
+      <p class="subtitle">
+        Take screenshots of these cards to create project images
+      </p>
+
+      <div class="instructions">
+        <h3>Instructions:</h3>
+        <p>1. Take a screenshot of each project card below</p>
+        <p>2. Save them with the following names in your assets folder:</p>
+        <ul>
+          <li>plant-disease.jpg</li>
+          <li>income-prediction.jpg</li>
+          <li>devqueryx.jpg</li>
+          <li>ecommerce.jpg</li>
+          <li>emotion-detection.jpg</li>
+          <li>sentiment-analysis.jpg</li>
+        </ul>
+        <p>3. Recommended size: 800x600 pixels</p>
+      </div>
+
+      <div class="project-grid">
+        <div class="project-card">
+          <div class="project-icon">🌱</div>
+          <h3 class="project-title">Plant Disease Prediction</h3>
+          <p class="project-description">
+            AI-powered web application that detects plant diseases from leaf
+            images using CNN with 94% accuracy.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">TensorFlow</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">CNN</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon">📊</div>
+          <h3 class="project-title">Income Prediction System</h3>
+          <p class="project-description">
+            Machine learning model that predicts income levels based on
+            demographic and economic factors using advanced regression
+            techniques.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Scikit-learn</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">Matplotlib</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon">🤖</div>
+          <h3 class="project-title">DevQueryX</h3>
+          <p class="project-description">
+            A smart multi-agent system that classifies and routes developer
+            queries to the appropriate AI agents — either for code generation,
+            debugging, or conceptual explanations.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">OpenAI API</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">NLP</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon">🛒</div>
+          <h3 class="project-title">E-Commerce App</h3>
+          <p class="project-description">
+            Cross-platform mobile app with authentication, product browsing,
+            cart, and secure checkout system.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">JWT</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon">😊</div>
+          <h3 class="project-title">Emotion Detection System</h3>
+          <p class="project-description">
+            Real-time emotion detection from webcam feed recognizing 7 different
+            emotions with trend visualization.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">DeepFace</span>
+            <span class="tech-tag">OpenCV</span>
+            <span class="tech-tag">Matplotlib</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon">📝</div>
+          <h3 class="project-title">Sentiment Analysis System</h3>
+          <p class="project-description">
+            Text classification system for sentiment analysis using NLTK and
+            machine learning algorithms.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">NLTK</span>
+            <span class="tech-tag">Scikit-learn</span>
+            <span class="tech-tag">TF-IDF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

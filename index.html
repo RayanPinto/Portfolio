@@ -3,783 +3,928 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rayan Pinto - Portfolio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Custom Tailwind Configuration with Your Friend's Color Scheme -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              "bg-color": "#081b29",
-              "second-bg-color": "#112e42",
-              "text-color": "#ededed",
-              "main-color": "#00abf0",
-            },
-          },
-        },
-      };
-    </script>
-    <!-- React and ReactDOM CDN -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/react@18/umd/react.development.js"
-      crossorigin
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.development.js"
-      crossorigin
-    ></script>
-    <!-- Babel for JSX -->
-    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.22.5/babel.min.js"></script>
-    <!-- Font Awesome for Icons -->
+    <title>Rayan Pinto - Profile Summary Portfolio</title>
+
+    <!-- Meta tags for SEO -->
+    <meta
+      name="description"
+      content="Rayan Pinto - Profile Summary specializing in React, Node.js, Flutter, and AI/ML technologies. View my projects and experience."
+    />
+    <meta
+      name="keywords"
+      content="Profile Summary, React, Node.js, Flutter, AI, ML, Portfolio"
+    />
+    <meta name="author" content="Rayan Pinto" />
+
+    <!-- Open Graph tags -->
+    <meta
+      property="og:title"
+      content="Rayan Pinto - Profile Summary Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Profile Summary specializing in modern web technologies and AI/ML"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rayanpinto.github.io" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+    <!-- CSS Libraries -->
     <link
-      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <!-- Google Fonts (Poppins) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="loader">
+        <div class="loader-circle"></div>
+        <div class="loader-text">Loading...</div>
+      </div>
+    </div>
 
-    <script type="text/babel">
-      // Navbar Component
-      function Navbar() {
-        return (
-          <nav className="bg-bg-color text-text-color p-4 fixed w-full top-0 z-10 shadow-lg flex justify-between items-center">
-            <div className="container mx-auto flex justify-between items-center">
-              <h1 className="text-2xl font-bold font-poppins">Rayan Pinto</h1>
-              <div className="space-x-4 font-poppins">
-                <a
-                  href="#home"
-                  className="hover:text-main-color transition duration-300"
-                >
-                  Home
-                </a>
-                <a
-                  href="#about"
-                  className="hover:text-main-color transition duration-300"
-                >
-                  About Me
-                </a>
-                <a
-                  href="#education"
-                  className="hover:text-main-color transition duration-300"
-                >
-                  Education
-                </a>
-                <a
-                  href="#skills"
-                  className="hover:text-main-color transition duration-300"
-                >
-                  Skills
-                </a>
-                <a
-                  href="#projects"
-                  className="hover:text-main-color transition duration-300"
-                >
-                  Projects
-                </a>
-                <a
-                  href="#awards"
-                  className="hover:text-main-color transition duration-300"
-                >
-                  Awards
-                </a>
-                <a
-                  href="#contact"
-                  className="hover:text-main-color transition duration-300"
-                >
-                  Contact Me
-                </a>
-              </div>
-            </div>
-          </nav>
-        );
-      }
+    <!-- Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-follower"></div>
 
-      // Home Section with Dynamic Neuron Animation
-      function Home() {
-        return (
-          <section
-            id="home"
-            className="min-h-screen flex items-center justify-center font-poppins bg-bg-color relative overflow-hidden"
-          >
-            {/* Neuron Animation Background */}
-            <div className="neuron-animation">
-              {/* Neuron Nodes */}
-              <span className="neuron-node node-1"></span>
-              <span className="neuron-node node-2"></span>
-              <span className="neuron-node node-3"></span>
-              <span className="neuron-node node-4"></span>
-              <span className="neuron-node node-5"></span>
-              <span className="neuron-node node-6"></span>
-              <span className="neuron-node node-7"></span>
-              <span className="neuron-node node-8"></span>
-              <span className="neuron-node node-9"></span>
-              <span className="neuron-node node-10"></span>
-              <span className="neuron-node node-11"></span>
-              <span className="neuron-node node-12"></span>
-              <span className="neuron-node node-13"></span>
-              <span className="neuron-node node-14"></span>
-              <span className="neuron-node node-15"></span>
-              {/* Container for Dynamic Connections */}
-              <div className="connections-container"></div>
-            </div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <span class="logo-text">Rayan</span>
+          <span class="logo-dot">.</span>
+        </div>
 
-            {/* Content Section */}
-            <div className="bg-second-bg-color bg-opacity-70 py-8 px-6 rounded-lg text-center z-10">
-              <h1 className="text-5xl font-bold text-text-color mb-4 animate-fadeIn">
-                Hello! I'm <span className="text-main-color">Rayan Pinto</span>
-              </h1>
-              <p className="text-2xl text-text-color mb-4 animate-fadeIn animation-delay-200">
-                Full Stack Developer
-              </p>
-              <p className="text-lg text-text-color mb-6 animate-fadeIn animation-delay-500">
-                Crafting seamless and visually stunning web experiences with
-                modern technologies.
-              </p>
+        <div class="nav-menu" id="nav-menu">
+          <a href="#home" class="nav-link active" data-section="home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+          <a href="#about" class="nav-link" data-section="about">
+            <i class="fas fa-user"></i>
+            <span>About</span>
+          </a>
+          <a href="#skills" class="nav-link" data-section="skills">
+            <i class="fas fa-code"></i>
+            <span>Skills</span>
+          </a>
+          <a href="#projects" class="nav-link" data-section="projects">
+            <i class="fas fa-project-diagram"></i>
+            <span>Projects</span>
+          </a>
+          <a href="#contact" class="nav-link" data-section="contact">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+          </a>
+        </div>
 
-              <div className="flex flex-col items-center space-y-6">
-                <a
-                  href="https://drive.google.com/uc?export=download&id=16YsbnYR6mWeIarf8qWLrxUYkz6vnImVp"
-                  download="Rayan_Pinto_Resume.pdf"
-                  className="bg-main-color text-bg-color px-6 py-3 rounded-lg font-semibold hover:bg-bg-color hover:text-main-color border-2 border-main-color transition-all duration-500 animate-fadeIn animation-delay-500"
-                >
-                  Download Resume
-                </a>
+        <div class="nav-toggle" id="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
 
-                <div className="flex justify-center space-x-4">
-                  <a
-                    href="https://www.linkedin.com/in/rayan-pinto-0848892a5/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fab fa-linkedin text-3xl text-main-color hover:text-text-color transition"></i>
-                  </a>
-                  <a
-                    href="https://github.com/RayanPinto"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fab fa-github text-3xl text-main-color hover:text-text-color transition"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-        );
-      }
+        <!-- Theme Toggle -->
+        <div class="theme-toggle" id="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </div>
+      </div>
+    </nav>
 
-      // About Me Section
-      function About() {
-        return (
-          <section id="about" className="py-16 bg-second-bg-color font-poppins">
-            <div className="container mx-auto px-4">
-              <h2 className="text-4xl font-bold text-center text-text-color mb-8 animate-fadeIn">
-                About Me
-              </h2>
-              <div className="flex flex-col items-center">
-                <div className="relative w-48 h-48 mb-6">
-                  <div className="absolute inset-0 border-4 border-main-color rounded-full animate-spin-slow"></div>
-                  <img
-                    src="about.jpg"
-                    alt="Rayan Pinto"
-                    className="w-full h-full rounded-full object-cover border-2 border-main-color"
-                  />
-                </div>
-                <div className="text-center max-w-2xl">
-                  <h3 className="text-2xl font-semibold text-text-color mb-4 animate-fadeIn">
-                    Full Stack Developer
-                  </h3>
-                  <p className="text-lg text-text-color animate-fadeIn animation-delay-200">
-                    Hi, I'm Rayan Pinto, a passionate frontend developer with a
-                    knack for creating visually stunning and user-friendly
-                    websites. I thrive on collaboration and innovation,
-                    constantly seeking to push the boundaries of web
-                    development.
-                  </p>
-                  <a
-                    href="#contact"
-                    className="mt-6 inline-block bg-main-color text-bg-color px-6 py-3 rounded-lg font-semibold hover:bg-bg-color hover:text-main-color border-2 border-main-color transition-all duration-500"
-                  >
-                    Read More
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-        );
-      }
-
-      // Education Section
-      function Education() {
-        const educationData = [
-          {
-            year: "2020-2022",
-            title: "PCMC - St. Aloysius PU College",
-            description:
-              "I completed my Pre-University education at St. Aloysius PU College, specializing in PCM with Computer Science.",
-            marks: "Marks: 97%",
-            cgpa: "",
-          },
-          {
-            year: "2022-2026",
-            title: "B.E in Computer Science And Business Systems - SJEC",
-            description:
-              "I am currently pursuing a Bachelor's degree in Computer Science and Business Systems (CSBS) at St. Joseph's Engineering College.",
-            marks: "",
-            cgpa: "CGPA: 9.25 (as of 2025)",
-          },
-        ];
-
-        return (
-          <section id="education" className="py-16 bg-bg-color font-poppins">
-            <div className="container mx-auto px-4">
-              <h2 className="text-4xl font-bold text-center text-text-color mb-8 animate-fadeIn">
-                My Journey
-              </h2>
-              <div className="flex flex-wrap gap-8 justify-center">
-                {educationData.map((edu, index) => (
-                  <div
-                    key={index}
-                    className="relative flex-1 min-w-[300px] max-w-[400px] animate-fadeIn"
-                    style={{ animationDelay: `${index * 200}ms` }}
-                  >
-                    <div className="absolute left-0 top-0 w-1 h-full bg-main-color"></div>
-                    <div className="absolute left-[-10px] top-0 w-5 h-5 bg-main-color rounded-full"></div>
-                    <div className="ml-8 p-4 border-2 border-main-color rounded-lg hover:bg-second-bg-color transition-all duration-500">
-                      <p className="text-main-color text-lg font-semibold">
-                        <i className="far fa-calendar-alt mr-2"></i>
-                        {edu.year}
-                      </p>
-                      <h3 className="text-xl font-semibold text-text-color mt-2">
-                        {edu.title}
-                      </h3>
-                      <p className="text-text-color mt-2">{edu.description}</p>
-                      {edu.marks && (
-                        <p className="text-text-color mt-1">{edu.marks}</p>
-                      )}
-                      {edu.cgpa && (
-                        <p className="text-text-color mt-1">{edu.cgpa}</p>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        );
-      }
-
-      // Skills Section
-      function Skills() {
-        const skills = [
-          "C",
-          "C++",
-          "Python",
-          "Javascript",
-          "Java",
-          "NodeJS",
-          "Flutter",
-          "Web Development",
-          "Machine Learning",
-        ];
-        return (
-          <section
-            id="skills"
-            className="py-16 bg-second-bg-color font-poppins"
-          >
-            <div className="container mx-auto px-4">
-              <h2 className="text-4xl font-bold text-center text-text-color mb-8 animate-fadeIn">
-                My Skills
-              </h2>
-              <div className="flex overflow-x-auto space-x-4 pb-4">
-                {skills.map((skill, index) => (
-                  <div
-                    key={index}
-                    className="flex-shrink-0 w-48 text-center bg-bg-color p-4 rounded-lg shadow-lg hover:-translate-y-2 transition-transform duration-300 animate-fadeIn"
-                    style={{ animationDelay: `${index * 200}ms` }}
-                  >
-                    <h3 className="text-xl font-semibold text-text-color">
-                      {skill}
-                    </h3>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        );
-      }
-
-      // Projects Section
-      function Projects() {
-        const projects = [
-          {
-            name: "Plant Disease Prediction Website",
-            description:
-              "Trained a machine learning model to predict plant diseases and deployed it using Streamlit as the frontend interface.",
-          },
-          {
-            name: "E-Commerce App using Flutter & NodeJS",
-            description:
-              "Developed a Flutter application with a Node.js backend that allows users to buy and sell products seamlessly.",
-          },
-          {
-            name: "Fruits & Vegetable Recognition",
-            description:
-              "Trained a machine learning model to recognize and classify different fruits and vegetables based on image data.",
-          },
-        ];
-
-        return (
-          <section id="projects" className="py-16 bg-bg-color font-poppins">
-            <div className="container mx-auto px-4">
-              <h2 className="text-4xl font-bold text-center text-text-color mb-8 animate-fadeIn">
-                Projects
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {projects.map((project, index) => (
-                  <div
-                    key={index}
-                    className="bg-second-bg-color p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 animate-fadeIn"
-                    style={{ animationDelay: `${index * 200}ms` }}
-                  >
-                    <h3 className="text-xl font-semibold text-text-color mb-2">
-                      {project.name}
-                    </h3>
-                    <p className="text-text-color">{project.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        );
-      }
-
-      // Awards and Achievements Section
-      function Awards() {
-        const awards = [
-          {
-            title: "Winner - HacktoFuture 2.0",
-            description:
-              "Secured first place in HacktoFuture 2.0, a competitive hackathon focused on innovative tech solutions, held in 2024.",
-          },
-        ];
-
-        return (
-          <section id="awards" className="py-16 bg-bg-color font-poppins">
-            <div className="container mx-auto px-4">
-              <h2 className="text-4xl font-bold text-center text-text-color mb-8 animate-fadeIn">
-                Awards & Achievements
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {awards.map((award, index) => (
-                  <div
-                    key={index}
-                    className="bg-second-bg-color p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 animate-fadeIn"
-                    style={{ animationDelay: `${index * 200}ms` }}
-                  >
-                    <h3 className="text-xl font-semibold text-text-color mb-2">
-                      {award.title}
-                    </h3>
-                    <p className="text-text-color">{award.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        );
-      }
-
-      // Updated Contact Section
-      function Contact() {
-        return (
-          <section id="contact" className="py-16 bg-bg-color font-poppins">
-            <div className="container mx-auto px-4">
-              <h2 className="text-4xl font-bold text-center text-text-color mb-8 animate-fadeIn">
-                Contact Me!
-              </h2>
-              <div className="max-w-2xl mx-auto text-center">
-                <div className="bg-second-bg-color bg-opacity-70 py-8 px-6 rounded-lg">
-                  <div className="flex flex-col items-center space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <i className="fas fa-phone text-2xl text-main-color"></i>
-                      <p className="text-lg text-text-color">9901898521</p>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <i className="fas fa-envelope text-2xl text-main-color"></i>
-                      <a
-                        href="mailto:rayanpinto9482@gmail.com"
-                        className="text-lg text-text-color hover:text-main-color transition duration-300"
-                      >
-                        rayanpinto9482@gmail.com
-                      </a>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <i className="fab fa-linkedin text-2xl text-main-color"></i>
-                      <a
-                        href="https://www.linkedin.com/in/rayan-pinto-0848892a5/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-lg text-text-color hover:text-main-color transition duration-300"
-                      >
-                        LinkedIn Profile
-                      </a>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <i className="fab fa-github text-2xl text-main-color"></i>
-                      <a
-                        href="https://github.com/RayanPinto"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-lg text-text-color hover:text-main-color transition duration-300"
-                      >
-                        GitHub Profile
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        );
-      }
-
-      // Footer Component
-      function Footer() {
-        return (
-          <footer className="bg-second-bg-color text-text-color p-4 text-center font-poppins">
-            <p>Copyright © 2025 by Rayan Pinto | All Rights Reserved.</p>
-            <a
-              href="#home"
-              className="inline-block mt-4 bg-main-color text-bg-color p-3 rounded-lg hover:bg-bg-color hover:text-main-color border-2 border-main-color transition-all duration-500"
-            >
-              <i className="fas fa-arrow-up"></i>
-            </a>
-          </footer>
-        );
-      }
-
-      // Main App Component
-      function App() {
-        React.useEffect(() => {
-          // Initial Setup
-          updateNeuronConnections();
-          // Update connections every 1.5 seconds
-          const intervalId = setInterval(updateNeuronConnections, 1500);
-
-          // Redraw on Resize
-          window.addEventListener("resize", drawNeuronConnections);
-          // Redraw Periodically to Account for Animation Movement
-          const drawIntervalId = setInterval(drawNeuronConnections, 100);
-
-          // Cleanup function
-          return () => {
-            clearInterval(intervalId);
-            clearInterval(drawIntervalId);
-            window.removeEventListener("resize", drawNeuronConnections);
-          };
-        }, []); // Empty dependency array means this runs once on mount
-
-        return (
-          <div>
-            <Navbar />
-            <Home />
-            <About />
-            <Education />
-            <Skills />
-            <Projects />
-            <Awards />
-            <Contact />
-            <Footer />
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Home Section -->
+      <section id="home" class="section home-section">
+        <div class="background-animation">
+          <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
           </div>
-        );
-      }
+          <div class="particles-container" id="particles"></div>
+        </div>
 
-      // Render the App
-      const root = ReactDOM.createRoot(document.getElementById("root"));
-      root.render(<App />);
+        <div class="container">
+          <div class="home-content">
+            <div class="home-text" data-aos="fade-up" data-aos-delay="200">
+              <div class="greeting">
+                <span class="wave">👋</span>
+                <span class="greeting-text">Hello, I'm</span>
+              </div>
 
-      // JavaScript for Dynamic Neuron Connections
-      function updateNeuronConnections() {
-        const container = document.querySelector(".connections-container");
-        if (!container) return;
+              <h1 class="main-title">
+                <span class="title-line">Rayan Pinto</span>
+                <span class="title-subtitle">Profile Summary</span>
+              </h1>
 
-        // Clear existing connections
-        container.innerHTML = "";
+              <div class="typing-container">
+                <span class="typing-text" id="typing-text"></span>
+                <span class="typing-cursor">|</span>
+              </div>
 
-        // Get all neuron nodes
-        const nodes = document.querySelectorAll(".neuron-node");
-        const nodeArray = Array.from(nodes);
-        const numConnections = 12; // Number of connections to create
+              <p class="home-description">
+                Crafting digital experiences with modern technologies.
+                Specialized in React, Node.js, Flutter, and AI/ML solutions.
+              </p>
 
-        // Create new connections
-        const usedPairs = new Set();
-        for (let i = 0; i < numConnections; i++) {
-          // Randomly select two different nodes
-          let node1Index, node2Index;
-          do {
-            node1Index = Math.floor(Math.random() * nodeArray.length);
-            node2Index = Math.floor(Math.random() * nodeArray.length);
-          } while (
-            node1Index === node2Index ||
-            usedPairs.has(`${node1Index}-${node2Index}`) ||
-            usedPairs.has(`${node2Index}-${node1Index}`)
-          );
+              <div class="home-buttons">
+                <a href="#projects" class="btn btn-primary ripple-effect">
+                  <span>View My Work</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+                <a
+                  href="assets/Rayan_Pinto_Resume.pdf"
+                  download
+                  class="btn btn-secondary ripple-effect"
+                >
+                  <span>Download CV</span>
+                  <i class="fas fa-download"></i>
+                </a>
+              </div>
+            </div>
 
-          usedPairs.add(`${node1Index}-${node2Index}`);
+            <div class="home-visual" data-aos="fade-left" data-aos-delay="400">
+              <div class="profile-card">
+                <div class="profile-image">
+                  <img src="about.jpg" alt="Rayan Pinto" class="profile-img" />
+                  <div class="profile-glow"></div>
+                </div>
+                <div class="profile-stats">
+                  <div class="stat">
+                    <span class="stat-number">4+</span>
+                    <span class="stat-label">Years Experience</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Projects</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Technologies</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          // Create connection element
-          const conn = document.createElement("span");
-          conn.className = `neuron-connection conn-${node1Index + 1}-${
-            node2Index + 1
-          }`;
-          container.appendChild(conn);
-        }
+          <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+            <span>Scroll Down</span>
+          </div>
+        </div>
+      </section>
 
-        // Draw the new connections
-        drawNeuronConnections();
-      }
+      <!-- About Section -->
+      <section id="about" class="section about-section">
+        <div class="container">
+          <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Get to know me better</p>
+          </div>
 
-      function drawNeuronConnections() {
-        const connections = document.querySelectorAll(".neuron-connection");
-        connections.forEach((conn) => {
-          const [node1Num, node2Num] = conn.className
-            .match(/conn-(\d+)-(\d+)/)
-            .slice(1)
-            .map(Number);
-          const node1 = document.querySelector(`.node-${node1Num}`);
-          const node2 = document.querySelector(`.node-${node2Num}`);
+          <div class="about-content">
+            <div class="about-text" data-aos="fade-right" data-aos-delay="200">
+              <h3 class="about-heading"> Profile Summary</h3>
+              <p class="about-description">
+                A Computer Science and Business Systems student with strong skills in machine learning and full-stack web and mobile
+development. Skilled at building real-world solutions that address practical challenges and deliver impactful results.
 
-          if (node1 && node2) {
-            const rect1 = node1.getBoundingClientRect();
-            const rect2 = node2.getBoundingClientRect();
+              </p>
 
-            const x1 = rect1.left + rect1.width / 2;
-            const y1 = rect1.top + rect1.height / 2;
-            const x2 = rect2.left + rect2.width / 2;
-            const y2 = rect2.top + rect2.height / 2;
+              <div class="about-highlights">
+                <div class="highlight">
+                  <i class="fas fa-rocket"></i>
+                  <span>Fast & Responsive Applications</span>
+                </div>
+                <div class="highlight">
+                  <i class="fas fa-mobile-alt"></i>
+                  <span>Cross-Platform Development</span>
+                </div>
+                <div class="highlight">
+                  <i class="fas fa-brain"></i>
+                  <span>AI/ML Integration</span>
+                </div>
+                <div class="highlight">
+                  <i class="fas fa-shield-alt"></i>
+                  <span>Secure & Scalable Solutions</span>
+                </div>
+              </div>
 
-            const length = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
-            const angle = Math.atan2(y2 - y1, x2 - x1) * (180 / Math.PI);
+              <div class="about-stats">
+                <div class="stat-card">
+                  <div class="stat-icon">
+                    <i class="fas fa-code"></i>
+                  </div>
+                  <div class="stat-info">
+                    <h4>15+</h4>
+                    <p>Technologies</p>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon">
+                    <i class="fas fa-project-diagram"></i>
+                  </div>
+                  <div class="stat-info">
+                    <h4>10</h4>
+                    <p>Projects</p>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon">
+                    <i class="fas fa-trophy"></i>
+                  </div>
+                  <div class="stat-info">
+                    <h4>2</h4>
+                    <p>Awards</p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            conn.style.width = `${length}px`;
-            conn.style.left = `${x1}px`;
-            conn.style.top = `${y1}px`;
-            conn.style.transform = `rotate(${angle}deg)`;
-            conn.style.transformOrigin = "0 0";
-          }
-        });
-      }
-    </script>
+            <div class="about-visual" data-aos="fade-left" data-aos-delay="400">
+              <div class="about-image-container">
+                <img src="about.jpg" alt="Rayan Pinto" class="about-image" />
+                <div class="about-image-overlay">
+                  <div class="overlay-content">
+                    <h4>Rayan Pinto</h4>
+                    <p>Profile Summary</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <style>
-      body {
-        font-family: "Poppins", sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #081b29;
-        color: #ededed;
-        scroll-behavior: smooth;
-      }
+      <!-- Skills Section -->
+      <section id="skills" class="section skills-section">
+        <div class="container">
+          <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <p class="section-subtitle">Technologies I work with</p>
+          </div>
 
-      /* Custom Animations for Content */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+          <div class="skills-content">
+            <div class="skills-categories">
+              <div
+                class="skill-category"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <h3 class="category-title">
+                  <i class="fas fa-code"></i>
+                  Programming Languages
+                </h3>
+                <div class="skills-grid">
+                  <div class="skill-item" data-skill="C">
+                    <div class="skill-icon">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
+                        alt="C"
+                      />
+                    </div>
+                    <div class="skill-name">C</div>
+                    <div class="skill-progress">
+                      <div class="progress-bar" data-progress="90"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" data-skill="C++">
+                    <div class="skill-icon">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                        alt="C++"
+                      />
+                    </div>
+                    <div class="skill-name">C++</div>
+                    <div class="skill-progress">
+                      <div class="progress-bar" data-progress="85"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" data-skill="Python">
+                    <div class="skill-icon">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                        alt="Python"
+                      />
+                    </div>
+                    <div class="skill-name">Python</div>
+                    <div class="skill-progress">
+                      <div class="progress-bar" data-progress="95"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" data-skill="Java">
+                    <div class="skill-icon">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                        alt="Java"
+                      />
+                    </div>
+                    <div class="skill-name">Java</div>
+                    <div class="skill-progress">
+                      <div class="progress-bar" data-progress="80"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" data-skill="JavaScript">
+                    <div class="skill-icon">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                        alt="JavaScript"
+                      />
+                    </div>
+                    <div class="skill-name">JavaScript</div>
+                    <div class="skill-progress">
+                      <div class="progress-bar" data-progress="90"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" data-skill="Dart">
+                    <div class="skill-icon">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
+                        alt="Dart"
+                      />
+                    </div>
+                    <div class="skill-name">Dart</div>
+                    <div class="skill-progress">
+                      <div class="progress-bar" data-progress="85"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" data-skill="Golang">
+                    <div class="skill-icon">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"
+                        alt="Golang"
+                      />
+                    </div>
+                    <div class="skill-name">Golang</div>
+                    <div class="skill-progress">
+                      <div class="progress-bar" data-progress="75"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-      @keyframes spin-slow {
-        100% {
-          transform: rotate(360deg);
-        }
-      }
+              <div
+                class="skill-category"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <h3 class="category-title">
+                  <i class="fas fa-mobile-alt"></i>
+                  Frameworks & Libraries
+                </h3>
+                <div class="skills-grid">
+                  <div class="skill-item" data-skill="Flutter">
+                    <div class="skill-icon">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
+                        alt="Flutter"
+                      />
+                    </div>
+                    <div class="skill-name">Flutter</div>
+                    <div class="skill-progress">
+                      <div class="progress-bar" data-progress="90"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" data-skill="React.js">
+                    <div class="skill-icon">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                        alt="React.js"
+                      />
+                    </div>
+                    <div class="skill-name">React.js</div>
+                    <div class="skill-progress">
+                      <div class="progress-bar" data-progress="85"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" data-skill="NodeJS">
+                    <div class="skill-icon">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                        alt="NodeJS"
+                      />
+                    </div>
+                    <div class="skill-name">NodeJS</div>
+                    <div class="skill-progress">
+                      <div class="progress-bar" data-progress="80"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" data-skill="Express.js">
+                    <div class="skill-icon">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                        alt="Express.js"
+                      />
+                    </div>
+                    <div class="skill-name">Express.js</div>
+                    <div class="skill-progress">
+                      <div class="progress-bar" data-progress="85"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-      .animate-fadeIn {
-        animation: fadeIn 1s ease-in-out forwards;
-      }
+              <div
+                class="skill-category"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <h3 class="category-title">
+                  <i class="fas fa-brain"></i>
+                  AI & Machine Learning
+                </h3>
+                <div class="skills-grid">
+                  <div class="skill-item" data-skill="TensorFlow">
+                    <div class="skill-icon">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                        alt="TensorFlow"
+                      />
+                    </div>
+                    <div class="skill-name">TensorFlow</div>
+                    <div class="skill-progress">
+                      <div class="progress-bar" data-progress="85"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" data-skill="Scikit-learn">
+                    <div class="skill-icon">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikit-learn/scikit-learn-original.svg"
+                        alt="Scikit-learn"
+                      />
+                    </div>
+                    <div class="skill-name">Scikit-learn</div>
+                    <div class="skill-progress">
+                      <div class="progress-bar" data-progress="90"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-      .animation-delay-200 {
-        animation-delay: 200ms;
-      }
+              <div
+                class="skill-category"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <h3 class="category-title">
+                  <i class="fas fa-database"></i>
+                  Databases & Tools
+                </h3>
+                <div class="skills-grid">
+                  <div class="skill-item" data-skill="MongoDB">
+                    <div class="skill-icon">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                        alt="MongoDB"
+                      />
+                    </div>
+                    <div class="skill-name">MongoDB</div>
+                    <div class="skill-progress">
+                      <div class="progress-bar" data-progress="80"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" data-skill="MySQL">
+                    <div class="skill-icon">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                        alt="MySQL"
+                      />
+                    </div>
+                    <div class="skill-name">MySQL</div>
+                    <div class="skill-progress">
+                      <div class="progress-bar" data-progress="85"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" data-skill="Firebase">
+                    <div class="skill-icon">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+                        alt="Firebase"
+                      />
+                    </div>
+                    <div class="skill-name">Firebase</div>
+                    <div class="skill-progress">
+                      <div class="progress-bar" data-progress="80"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" data-skill="Git">
+                    <div class="skill-icon">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                        alt="Git"
+                      />
+                    </div>
+                    <div class="skill-name">Git</div>
+                    <div class="skill-progress">
+                      <div class="progress-bar" data-progress="90"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      .animation-delay-500 {
-        animation-delay: 500ms;
-      }
+      <!-- Projects Section -->
+      <section id="projects" class="section projects-section">
+        <div class="container">
+          <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Some of my recent work</p>
+          </div>
 
-      .animate-spin-slow {
-        animation: spin-slow 8s linear infinite;
-      }
+          <div class="projects-grid">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="project-image">
+                <img
+                  src="assets/plant-disease.jpg"
+                  alt="Plant Disease Prediction"
+                  class="project-img"
+                />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="https://github.com/RayanPinto/Plant_Disease_Prediction" class="project-link">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Plant Disease Prediction</h3>
+                <p class="project-description">
+                  AI-powered web application that detects plant diseases from
+                  leaf images using CNN with 90%+ accuracy.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">TensorFlow</span>
+                  <span class="tech-tag">Flask</span>
+                  <span class="tech-tag">CNN</span>
+                </div>
+              </div>
+            </div>
 
-      /* Neuron Animation Styles */
-      .neuron-animation {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        pointer-events: none;
-      }
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="project-image">
+                <img
+                  src="assets/income-prediction.jpg"
+                  alt="Income Prediction"
+                  class="project-img"
+                />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="https://github.com/RayanPinto/Income_Prediction" class="project-link">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Income Prediction System</h3>
+                <p class="project-description">
+                  Machine learning model that predicts income levels based on
+                  demographic and economic factors using advanced regression
+                  techniques.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Scikit-learn</span>
+                  <span class="tech-tag">Pandas</span>
+                  <span class="tech-tag">Matplotlib</span>
+                </div>
+              </div>
+            </div>
 
-      .neuron-node {
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        background: #00abf0;
-        border-radius: 50%;
-        box-shadow: 0 0 15px #00abf0, 0 0 25px #00abf0;
-        animation: moveNeuron 8s ease-in-out infinite,
-          pulseNeuron 2s ease-in-out infinite;
-      }
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="project-image">
+                <img
+                  src="assets/devqueryx.jpg"
+                  alt="DevQueryX"
+                  class="project-img"
+                />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="https://github.com/RayanPinto/DevQueryX" class="project-link">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">DevQueryX</h3>
+                <p class="project-description">
+                  A smart multi-agent system that classifies and routes
+                  developer queries to the appropriate AI agents — either for
+                  code generation, debugging, or conceptual explanations.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">OpenAI API</span>
+                  <span class="tech-tag">FastAPI</span>
+                  <span class="tech-tag">NLP</span>
+                </div>
+              </div>
+            </div>
 
-      .node-1 {
-        top: 10%;
-        left: 5%;
-        animation-delay: 0s;
-      }
+            <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+              <div class="project-image">
+                <img
+                  src="assets/ecommerce.jpg"
+                  alt="E-Commerce App"
+                  class="project-img"
+                />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="https://github.com/RayanPinto/E-Commerce_App" class="project-link">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">E-Commerce App</h3>
+                <p class="project-description">
+                  Cross-platform mobile app with authentication, product
+                  browsing, cart, and secure checkout system.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Flutter</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">MongoDB</span>
+                  <span class="tech-tag">JWT</span>
+                </div>
+              </div>
+            </div>
 
-      .node-2 {
-        top: 20%;
-        left: 60%;
-        animation-delay: 0.5s;
-      }
+            <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+              <div class="project-image">
+                <img
+                  src="assets/emotion-detection.jpg"
+                  alt="Emotion Detection"
+                  class="project-img"
+                />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="https://github.com/RayanPinto/Rayan_Emotion_Detector" class="project-link">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Emotion Detection System</h3>
+                <p class="project-description">
+                  Real-time emotion detection from webcam feed recognizing 7
+                  different emotions with trend visualization.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">DeepFace</span>
+                  <span class="tech-tag">OpenCV</span>
+                  <span class="tech-tag">Matplotlib</span>
+                </div>
+              </div>
+            </div>
 
-      .node-3 {
-        top: 50%;
-        left: 15%;
-        animation-delay: 1s;
-      }
+            <div class="project-card" data-aos="fade-up" data-aos-delay="600">
+              <div class="project-image">
+                <img
+                  src="assets/sentiment-analysis.jpg"
+                  alt="Sentiment Analysis"
+                  class="project-img"
+                />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="https://github.com/RayanPinto/Sentiment-Analysis" class="project-link">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Sentiment Analysis System</h3>
+                <p class="project-description">
+                  Text classification system for sentiment analysis using NLTK
+                  and machine learning algorithms.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">NLTK</span>
+                  <span class="tech-tag">Scikit-learn</span>
+                  <span class="tech-tag">TF-IDF</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      .node-4 {
-        top: 65%;
-        left: 80%;
-        animation-delay: 1.5s;
-      }
+      <!-- Contact Section -->
+      <section id="contact" class="section contact-section">
+        <div class="container">
+          <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's work together</p>
+          </div>
 
-      .node-5 {
-        top: 30%;
-        left: 30%;
-        animation-delay: 2s;
-      }
+          <div class="contact-content">
+            <div
+              class="contact-info"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
+              <h3 class="contact-heading">Let's Connect</h3>
+              <p class="contact-description">
+                I'm always open to discussing new opportunities, interesting
+                projects, or just having a chat about technology and innovation.
+              </p>
 
-      .node-6 {
-        top: 75%;
-        left: 35%;
-        animation-delay: 2.5s;
-      }
+              <div class="contact-methods">
+                <div class="contact-method">
+                  <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="contact-details">
+                    <h4>Email</h4>
+                    <a href="mailto:rayanpinto9482@gmail.com"
+                      >rayanpinto9482@gmail.com</a
+                    >
+                  </div>
+                </div>
 
-      .node-7 {
-        top: 40%;
-        left: 70%;
-        animation-delay: 3s;
-      }
+                <div class="contact-method">
+                  <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <div class="contact-details">
+                    <h4>Phone</h4>
+                    <a href="tel:+919901898521">+91 9901898521</a>
+                  </div>
+                </div>
 
-      .node-8 {
-        top: 60%;
-        left: 10%;
-        animation-delay: 3.5s;
-      }
+                <div class="contact-method">
+                  <div class="contact-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                  <div class="contact-details">
+                    <h4>LinkedIn</h4>
+                    <a
+                      href="https://www.linkedin.com/in/rayan-pinto-0848892a5/"
+                      target="_blank"
+                      >Rayan Pinto</a
+                    >
+                  </div>
+                </div>
 
-      .node-9 {
-        top: 15%;
-        left: 85%;
-        animation-delay: 4s;
-      }
+                <div class="contact-method">
+                  <div class="contact-icon">
+                    <i class="fab fa-github"></i>
+                  </div>
+                  <div class="contact-details">
+                    <h4>GitHub</h4>
+                    <a href="https://github.com/RayanPinto" target="_blank"
+                      >RayanPinto</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
 
-      .node-10 {
-        top: 45%;
-        left: 50%;
-        animation-delay: 4.5s;
-      }
+            <div
+              class="contact-form-container"
+              data-aos="fade-left"
+              data-aos-delay="400"
+            >
+              <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="form-input"
+                  />
+                  <label for="name" class="form-label">Your Name</label>
+                </div>
 
-      .node-11 {
-        top: 80%;
-        left: 65%;
-        animation-delay: 5s;
-      }
+                <div class="form-group">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="form-input"
+                  />
+                  <label for="email" class="form-label">Your Email</label>
+                </div>
 
-      .node-12 {
-        top: 25%;
-        left: 40%;
-        animation-delay: 5.5s;
-      }
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    required
+                    class="form-input"
+                  />
+                  <label for="subject" class="form-label">Subject</label>
+                </div>
 
-      .node-13 {
-        top: 55%;
-        left: 90%;
-        animation-delay: 6s;
-      }
+                <div class="form-group">
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    class="form-input form-textarea"
+                  ></textarea>
+                  <label for="message" class="form-label">Your Message</label>
+                </div>
 
-      .node-14 {
-        top: 70%;
-        left: 20%;
-        animation-delay: 6.5s;
-      }
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-full ripple-effect"
+                >
+                  <span>Send Message</span>
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-      .node-15 {
-        top: 35%;
-        left: 95%;
-        animation-delay: 7s;
-      }
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <span class="logo-text">Rayan</span>
+            <span class="logo-dot">.</span>
+          </div>
 
-      .neuron-connection {
-        position: absolute;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, #00abf0, transparent);
-        animation: pulseConnection 1.5s ease-in-out infinite;
-        opacity: 0.5;
-        transition: opacity 0.3s ease;
-      }
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
 
-      @keyframes moveNeuron {
-        0%,
-        100% {
-          transform: translate(0, 0);
-        }
-        25% {
-          transform: translate(15px, -10px);
-        }
-        50% {
-          transform: translate(-10px, 15px);
-        }
-        75% {
-          transform: translate(10px, -15px);
-        }
-      }
+          <div class="footer-social">
+            <a
+              href="https://www.linkedin.com/in/rayan-pinto-0848892a5/"
+              target="_blank"
+              class="social-link"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+              href="https://github.com/RayanPinto"
+              target="_blank"
+              class="social-link"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:rayanpinto9482@gmail.com" class="social-link">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
 
-      @keyframes pulseNeuron {
-        0%,
-        100% {
-          transform: scale(1);
-          box-shadow: 0 0 15px #00abf0, 0 0 25px #00abf0;
-        }
-        50% {
-          transform: scale(1.3);
-          box-shadow: 0 0 20px #00abf0, 0 0 30px #00abf0;
-        }
-      }
+        <div class="footer-bottom">
+          <p>&copy; 2025 Rayan Pinto. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
 
-      @keyframes pulseConnection {
-        0%,
-        100% {
-          opacity: 0.5;
-        }
-        50% {
-          opacity: 0.9;
-        }
-      }
-    </style>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.16/typed.umd.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/particles.js"></script>
   </body>
 </html>

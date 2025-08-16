@@ -1,0 +1,44 @@
+{
+  "name": "rayan-pinto-portfolio",
+  "version": "1.0.0",
+  "description": "Professional portfolio website for Rayan Pinto - Full Stack Developer",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "portfolio",
+    "developer",
+    "fullstack",
+    "web",
+    "responsive",
+    "animations",
+    "javascript",
+    "css",
+    "html"
+  ],
+  "author": "Rayan Pinto",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RayanPinto/RayanPortfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RayanPinto/RayanPortfolio/issues"
+  },
+  "homepage": "https://rayanpinto.github.io/RayanPortfolio",
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
+
+
