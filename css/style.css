@@ -566,7 +566,6 @@ body {
     transform: translate(-50%, -50%);
     width: 220px;
     height: 220px;
-    background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
     border-radius: 50%;
     opacity: 0.3;
     animation: pulse 2s ease-in-out infinite;
