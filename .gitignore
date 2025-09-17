@@ -153,6 +153,7 @@ build/
 dist/
 out/
 /hi.png
+/hi
 # Backup files
 *.bak
 *.backup
