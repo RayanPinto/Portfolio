@@ -152,7 +152,7 @@ Thumbs.db
 build/
 dist/
 out/
-
+/hi.png
 # Backup files
 *.bak
 *.backup
