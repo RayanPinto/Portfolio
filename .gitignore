@@ -154,6 +154,7 @@ dist/
 out/
 /hi.png
 /hi
+/plant.png
 # Backup files
 *.bak
 *.backup
