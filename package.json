@@ -1,7 +1,7 @@
 {
   "name": "rayan-pinto-portfolio",
   "version": "1.0.0",
-  "description": "Professional portfolio website for Rayan Pinto - Full Stack Developer",
+  "description": "Professional portfolio website for Rayan Pinto - Software Engineer and Computer Science Student",
   "main": "index.html",
   "scripts": {
     "start": "python -m http.server 8000",

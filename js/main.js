@@ -91,9 +91,10 @@ function initThemeToggle() {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
     
-    // Check for saved theme preference or default to dark
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    // Force dark theme as default (override any saved preference)
+    const savedTheme = 'dark';
     body.setAttribute('data-theme', savedTheme);
+    localStorage.setItem('theme', savedTheme);
     updateThemeIcon(savedTheme);
     
     themeToggle.addEventListener('click', function() {
@@ -129,11 +130,11 @@ function initTypingEffect() {
     if (!typingText) return;
     
     const texts = [
+        'Software Engineer',
         'Full Stack Developer',
         'AI/ML Enthusiast',
         'Flutter Developer',
-        'Problem Solver',
-        'Creative Thinker'
+        'CS & Business Systems Student'
     ];
     
     let textIndex = 0;

@@ -84,11 +84,11 @@ function enhanceTypingEffect() {
   if (!typingText) return;
 
   const texts = [
-    "Profile Summary",
+    "Software Engineer",
+    "Full Stack Developer",
     "AI/ML Enthusiast",
-    "Mobile App Developer",
-    "Problem Solver",
-    "Tech Innovator",
+    "Flutter Developer",
+    "CS & Business Systems Student",
   ];
 
   let textIndex = 0;
