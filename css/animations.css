@@ -337,6 +337,11 @@
   transition: transform var(--transition-slow);
 }
 
+.project-img-contain {
+  object-fit: contain;
+  background-color: var(--bg-light);
+}
+
 .project-card:hover .project-img {
   transform: scale(1.1);
 }

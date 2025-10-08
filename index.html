@@ -1,1168 +1,1018 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rayan Pinto - Software Engineer Portfolio</title>
 
-    <!-- Meta tags for SEO -->
-    <meta
-      name="description"
-      content="Rayan Pinto - Software Engineer and Computer Science student specializing in full-stack development, React, Node.js, Flutter, and AI/ML technologies. View my projects and experience."
-    />
-    <meta
-      name="keywords"
-      content="Software Engineer, Full Stack Developer, React, Node.js, Flutter, AI, ML, Python, JavaScript, Portfolio, Computer Science"
-    />
-    <meta name="author" content="Rayan Pinto" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rayan Pinto - Software Engineer Portfolio</title>
 
-    <!-- Open Graph tags -->
-    <meta
-      property="og:title"
-      content="Rayan Pinto - Software Engineer Portfolio"
-    />
-    <meta
-      property="og:description"
-      content="Software Engineer specializing in full-stack development and AI/ML technologies"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://rayanpinto.github.io" />
+  <!-- Meta tags for SEO -->
+  <meta name="description"
+    content="Rayan Pinto - Software Engineer and Computer Science student specializing in full-stack development, React, Node.js, Flutter, and AI/ML technologies. View my projects and experience." />
+  <meta name="keywords"
+    content="Software Engineer, Full Stack Developer, React, Node.js, Flutter, AI, ML, Python, JavaScript, Portfolio, Computer Science" />
+  <meta name="author" content="Rayan Pinto" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="Rayan Pinto - Software Engineer Portfolio" />
+  <meta property="og:description"
+    content="Software Engineer specializing in full-stack development and AI/ML technologies" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rayanpinto.github.io" />
 
-    <!-- CSS Libraries -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/animations.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
-  </head>
-  <body>
-    <!-- Loading Screen -->
-    <div id="loading-screen" class="loading-screen">
-      <div class="loader">
-        <div class="loader-circle"></div>
-        <div class="loader-text">Loading...</div>
+  <!-- CSS Libraries -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loader">
+      <div class="loader-circle"></div>
+      <div class="loader-text">Loading...</div>
+    </div>
+  </div>
+
+  <!-- Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">Rayan</span>
+        <span class="logo-dot">.</span>
+      </div>
+
+      <div class="nav-menu" id="nav-menu">
+        <a href="#home" class="nav-link active" data-section="home">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+        <a href="#about" class="nav-link" data-section="about">
+          <i class="fas fa-user"></i>
+          <span>About</span>
+        </a>
+        <a href="#skills" class="nav-link" data-section="skills">
+          <i class="fas fa-code"></i>
+          <span>Skills</span>
+        </a>
+        <a href="#projects" class="nav-link" data-section="projects">
+          <i class="fas fa-project-diagram"></i>
+          <span>Projects</span>
+        </a>
+        <a href="#education" class="nav-link" data-section="education">
+          <i class="fas fa-graduation-cap"></i>
+          <span>Education</span>
+        </a>
+        <a href="#awards" class="nav-link" data-section="awards">
+          <i class="fas fa-trophy"></i>
+          <span>Awards</span>
+        </a>
+        <a href="#contact" class="nav-link" data-section="contact">
+          <i class="fas fa-envelope"></i>
+          <span>Contact</span>
+        </a>
+      </div>
+
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Theme Toggle -->
+      <div class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
       </div>
     </div>
+  </nav>
 
-    <!-- Cursor -->
-    <div class="custom-cursor"></div>
-    <div class="custom-cursor-follower"></div>
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Home Section -->
+    <section id="home" class="section home-section">
+      <div class="background-animation">
+        <div class="floating-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+          <div class="shape shape-4"></div>
+          <div class="shape shape-5"></div>
+        </div>
+        <div class="particles-container" id="particles"></div>
+      </div>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-      <div class="nav-container">
-        <div class="nav-logo">
+      <div class="container">
+        <div class="home-content">
+          <div class="home-text" data-aos="fade-up" data-aos-delay="200">
+            <div class="greeting">
+              <span class="wave">👋</span>
+              <span class="greeting-text">Hello, I'm</span>
+            </div>
+
+            <h1 class="main-title">
+              <span class="title-line">Rayan Pinto</span>
+              <span class="title-subtitle">Software Engineer | CS & Business Systems Student</span>
+            </h1>
+
+            <div class="typing-container">
+              <span class="typing-text" id="typing-text"></span>
+              <span class="typing-cursor">|</span>
+            </div>
+
+            <p class="home-description">
+              Computer Science and Business Systems student with a solid foundation in full-stack development and
+              hands-on experience building scalable web and mobile applications.
+            </p>
+
+            <div class="home-buttons">
+              <a href="#projects" class="btn btn-primary ripple-effect">
+                <span>View My Work</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="https://drive.google.com/uc?export=download&id=1OVjXKelHLoLMy36PRj_eZEJMrKw6nAMg
+" download class="btn btn-secondary ripple-effect">
+                <span>Download CV</span>
+                <i class="fas fa-download"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="home-visual" data-aos="fade-left" data-aos-delay="400">
+            <div class="profile-card">
+              <div class="profile-image">
+                <img src="about.jpg" alt="Rayan Pinto" class="profile-img" />
+                <div class="profile-glow"></div>
+              </div>
+              <div class="profile-stats">
+                <div class="stat">
+                  <span class="stat-number">2</span>
+                  <span class="stat-label">Awards</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">6+</span>
+                  <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">20+</span>
+                  <span class="stat-label">Technologies</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-indicator">
+          <div class="scroll-arrow"></div>
+          <span>Scroll Down</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">Get to know me better</p>
+        </div>
+
+        <div class="about-content">
+          <div class="about-text" data-aos="fade-right" data-aos-delay="200">
+            <h3 class="about-heading">Software Engineer</h3>
+            <p class="about-description">
+              Computer Science and Business Systems student with a solid foundation in full-stack development and
+              hands-on experience building scalable web and mobile applications. Contributed to the design and
+              implementation of reliable backend APIs, user-friendly interfaces, and database solutions. A fast learner,
+              eager to grow, and motivated to apply skills to create meaningful, real-world solutions.
+            </p>
+
+            <div class="about-highlights">
+              <div class="highlight">
+                <i class="fas fa-code"></i>
+                <span>Full-Stack Development</span>
+              </div>
+              <div class="highlight">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Mobile App Development</span>
+              </div>
+              <div class="highlight">
+                <i class="fas fa-brain"></i>
+                <span>Machine Learning & AI</span>
+              </div>
+              <div class="highlight">
+                <i class="fas fa-shield-alt"></i>
+                <span>Privacy & Security Systems</span>
+              </div>
+            </div>
+
+            <div class="about-stats">
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fas fa-code"></i>
+                </div>
+                <div class="stat-info">
+                  <h4>20+</h4>
+                  <p>Technologies</p>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fas fa-project-diagram"></i>
+                </div>
+                <div class="stat-info">
+                  <h4>6+</h4>
+                  <p>Projects</p>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fas fa-trophy"></i>
+                </div>
+                <div class="stat-info">
+                  <h4>2</h4>
+                  <p>Awards</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual" data-aos="fade-left" data-aos-delay="400">
+            <div class="about-image-container">
+              <img src="about.jpg" alt="Rayan Pinto" class="about-image" />
+              <div class="about-image-overlay">
+                <div class="overlay-content">
+                  <h4>Rayan Pinto</h4>
+                  <p>Software Engineer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Skills & Expertise</h2>
+          <p class="section-subtitle">Technologies I work with</p>
+        </div>
+
+        <div class="skills-content">
+          <div class="skills-categories">
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="category-title">
+                <i class="fas fa-code"></i>
+                Programming Languages
+              </h3>
+              <div class="skills-grid">
+                <div class="skill-item" data-skill="C">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" />
+                  </div>
+                  <div class="skill-name">C</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="90"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="C++">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                      alt="C++" />
+                  </div>
+                  <div class="skill-name">C++</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="85"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="Python">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                      alt="Python" />
+                  </div>
+                  <div class="skill-name">Python</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="95"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="Java">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+                  </div>
+                  <div class="skill-name">Java</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="80"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="JavaScript">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                      alt="JavaScript" />
+                  </div>
+                  <div class="skill-name">JavaScript</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="90"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="Dart">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart" />
+                  </div>
+                  <div class="skill-name">Dart</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="85"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="Golang">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Golang" />
+                  </div>
+                  <div class="skill-name">Golang</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="75"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+              <h3 class="category-title">
+                <i class="fas fa-mobile-alt"></i>
+                Frameworks & Libraries
+              </h3>
+              <div class="skills-grid">
+                <div class="skill-item" data-skill="Flutter">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
+                      alt="Flutter" />
+                  </div>
+                  <div class="skill-name">Flutter</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="90"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="React.js">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                      alt="React.js" />
+                  </div>
+                  <div class="skill-name">React.js</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="85"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="NodeJS">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                      alt="NodeJS" />
+                  </div>
+                  <div class="skill-name">NodeJS</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="80"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="Express.js">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                      alt="Express.js" />
+                  </div>
+                  <div class="skill-name">Express.js</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="85"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="Django">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
+                      alt="Django" />
+                  </div>
+                  <div class="skill-name">Django</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="80"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="Vite">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg"
+                      alt="Vite" />
+                  </div>
+                  <div class="skill-name">Vite</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="75"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+              <h3 class="category-title">
+                <i class="fas fa-brain"></i>
+                AI & Machine Learning
+              </h3>
+              <div class="skills-grid">
+                <div class="skill-item" data-skill="TensorFlow">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                      alt="TensorFlow" />
+                  </div>
+                  <div class="skill-name">TensorFlow</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="85"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="NumPy">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
+                      alt="NumPy" />
+                  </div>
+                  <div class="skill-name">NumPy</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="88"></div>
+                  </div>
+                </div>
+
+                <!-- Pandas -->
+                <div class="skill-item" data-skill="Pandas">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
+                      alt="Pandas" />
+                  </div>
+                  <div class="skill-name">Pandas</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="92"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="Scikit-learn">
+                  <div class="skill-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
+                      alt="Scikit-learn" />
+                  </div>
+                  <div class="skill-name">Scikit-learn</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="90"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="Whisper">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                      alt="Whisper" />
+                  </div>
+                  <div class="skill-name">Whisper</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="85"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="CNN">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                      alt="CNN" />
+                  </div>
+                  <div class="skill-name">CNN</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="88"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="RNN">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                      alt="RNN" />
+                  </div>
+                  <div class="skill-name">RNN</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="85"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="BERT">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                      alt="BERT" />
+                  </div>
+                  <div class="skill-name">BERT</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="80"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+              <h3 class="category-title">
+                <i class="fas fa-database"></i>
+                Databases & Tools
+              </h3>
+              <div class="skills-grid">
+                <div class="skill-item" data-skill="MongoDB">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                      alt="MongoDB" />
+                  </div>
+                  <div class="skill-name">MongoDB</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="80"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="MySQL">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                      alt="MySQL" />
+                  </div>
+                  <div class="skill-name">MySQL</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="85"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="Firebase">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+                      alt="Firebase" />
+                  </div>
+                  <div class="skill-name">Firebase</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="80"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="Git">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+                  </div>
+                  <div class="skill-name">Git</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="90"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="Docker">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                      alt="Docker" />
+                  </div>
+                  <div class="skill-name">Docker</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="75"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="Mongoose">
+                  <div class="skill-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                      alt="Mongoose" />
+                  </div>
+                  <div class="skill-name">Mongoose</div>
+                  <div class="skill-progress">
+                    <div class="progress-bar" data-progress="80"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">Some of my recent work</p>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-image">
+              <img src="assets/plant.png" alt="Plant Disease Prediction" class="project-img" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/RayanPinto/Plant_Disease_Prediction" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Plant Disease Prediction</h3>
+              <p class="project-description">
+                AI-powered web application that detects plant diseases from
+                leaf images using CNN with 90%+ accuracy.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">TensorFlow</span>
+                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">CNN</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-image">
+              <img src="assets/obscura.jpg" alt="Obscura Privacy System" class="project-img project-img-contain" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/RayanPinto/" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Obscura (Team Project): Privacy-Preserving Data System</h3>
+              <p class="project-description">
+                Developed a mobile-first system with client-side encryption, differential privacy, and synthetic data
+                generation. Built survey + OCR pipelines (AES-256, Supabase) and applied CTGAN + Differential Privacy
+                for secure analysis. Designed multi-layer privacy architecture protecting against inference, and secure
+                threats.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">React Native</span>
+                <span class="tech-tag">Supabase</span>
+                <span class="tech-tag">AES</span>
+                <span class="tech-tag">Differential Privacy</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-image">
+              <img src="assets/Multimodal Agentic Framework for Behavioral Profiling.png"
+                alt="Multimodal Agentic Framework for Behavioral Profiling" class="project-img" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/RayanPinto/" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Multimodal Agentic Framework for Behavioral Profiling (Team Project, In
+                Progress)</h3>
+              <p class="project-description">
+                Building a real-time system extracting 40+ behavioral signals from speech and facial data. Integrating
+                ADK agent for contextual attention/fatigue scoring with low-latency optimization. Designing evaluation
+                harness and logging framework for multi-session performance testing.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">ADK</span>
+                <span class="tech-tag">Whisper API</span>
+                <span class="tech-tag">DeepFace</span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-image">
+              <img src="assets/devquery.png" alt="DevQueryX" class="project-img" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/RayanPinto/DevQueryX" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">DevQueryX</h3>
+              <p class="project-description">
+                A smart multi-agent system that classifies and routes
+                developer queries to the appropriate AI agents — either for
+                code generation, debugging, or conceptual explanations.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Google API</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">ADK</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="project-image">
+              <img src="assets/hi.png" alt="E-Commerce App" class="project-img" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/RayanPinto/E-Commerce_App" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">E-Commerce App</h3>
+              <p class="project-description">
+                Cross-platform mobile app with authentication, product
+                browsing, cart, and secure checkout system.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">JWT</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="project-image">
+              <img src="assets/emotion.png" alt="Emotion Detection" class="project-img" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/RayanPinto/Rayan_Emotion_Detector" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Emotion Detection System</h3>
+              <p class="project-description">
+                Real-time emotion detection from webcam feed recognizing 7
+                different emotions with trend visualization.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">DeepFace</span>
+                <span class="tech-tag">OpenCV</span>
+                <span class="tech-tag">Matplotlib</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="600">
+            <div class="project-image">
+              <img src="assets/sentiment.png" alt="Sentiment Analysis" class="project-img" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/RayanPinto/Sentiment-Analysis" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Sentiment Analysis System</h3>
+              <p class="project-description">
+                Text classification system for sentiment analysis using NLTK
+                and machine learning algorithms.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">NLTK</span>
+                <span class="tech-tag">Scikit-learn</span>
+                <span class="tech-tag">TF-IDF</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Education</h2>
+          <p class="section-subtitle">Academic Background</p>
+        </div>
+
+        <div class="education-content">
+          <div class="education-timeline">
+            <div class="education-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="education-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="education-details">
+                <h3 class="education-title">B.E. in Computer Science and Business Systems</h3>
+                <p class="education-institution">St. Joseph Engineering College, Mangalore</p>
+                <p class="education-duration">2022 - 2026</p>
+                <p class="education-grade">CGPA: 9.22/10</p>
+              </div>
+            </div>
+
+            <div class="education-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="education-icon">
+                <i class="fas fa-school"></i>
+              </div>
+              <div class="education-details">
+                <h3 class="education-title">Pre-University Course</h3>
+                <p class="education-institution">St. Aloysius PU College, Mangalore</p>
+                <p class="education-duration">2020 - 2022</p>
+                <p class="education-grade">Marks: 97%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="section awards-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Awards & Achievements</h2>
+          <p class="section-subtitle">Recognition for excellence</p>
+        </div>
+
+        <div class="awards-content">
+          <div class="awards-grid">
+            <div class="award-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="award-icon">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <div class="award-details">
+                <h3 class="award-title">HackToFuture 2.0 Winner</h3>
+                <p class="award-organization">EGDK India Pvt Ltd</p>
+                <p class="award-date">February 2024</p>
+                <p class="award-description">
+                  Awarded for developing the most innovative and functional project among a competitive field of
+                  participants.
+                </p>
+              </div>
+            </div>
+
+            <div class="award-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="award-icon">
+                <i class="fas fa-medal"></i>
+              </div>
+              <div class="award-details">
+                <h3 class="award-title">HackEVL Winner</h3>
+                <p class="award-organization">Google Developer Group</p>
+                <p class="award-date">September 2023</p>
+                <p class="award-description">
+                  Awarded for building a high-impact and technically innovative solution during a competitive weekend
+                  hackathon.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">Let's work together</p>
+        </div>
+
+        <div class="contact-content">
+          <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
+            <h3 class="contact-heading">Let's Connect</h3>
+            <p class="contact-description">
+              I'm always open to discussing new opportunities, interesting
+              projects, or just having a chat about technology and innovation.
+            </p>
+
+            <div class="contact-methods">
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Email</h4>
+                  <a href="mailto:rayanpinto9482@gmail.com">rayanpinto9482@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Phone</h4>
+                  <a href="tel:+919901898521">+91 9901898521</a>
+                </div>
+              </div>
+
+              <a href="https://www.linkedin.com/in/rayan-pinto-0848892a5/" target="_blank" class="contact-method"
+                style="text-decoration: none; color: inherit;">
+                <div class="contact-icon">
+                  <i class="fab fa-linkedin"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>LinkedIn</h4>
+                  <p>Rayan Pinto</p>
+                </div>
+              </a>
+
+
+              <a href="https://github.com/RayanPinto" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="contact-method">
+                  <div class="contact-icon">
+                    <i class="fab fa-github"></i>
+                  </div>
+                  <div class="contact-details">
+                    <h4>GitHub</h4>
+                    <p>RayanPinto</p>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="contact-form-container" data-aos="fade-left" data-aos-delay="400">
+            <form class="contact-form" id="contact-form">
+              <div class="form-group">
+                <input type="text" id="name" name="name" required class="form-input" />
+                <label for="name" class="form-label">Your Name</label>
+              </div>
+
+              <div class="form-group">
+                <input type="email" id="email" name="email" required class="form-input" />
+                <label for="email" class="form-label">Your Email</label>
+              </div>
+
+              <div class="form-group">
+                <input type="text" id="subject" name="subject" required class="form-input" />
+                <label for="subject" class="form-label">Subject</label>
+              </div>
+
+              <div class="form-group">
+                <textarea id="message" name="message" required class="form-input form-textarea"></textarea>
+                <label for="message" class="form-label">Your Message</label>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full ripple-effect">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
           <span class="logo-text">Rayan</span>
           <span class="logo-dot">.</span>
         </div>
 
-        <div class="nav-menu" id="nav-menu">
-          <a href="#home" class="nav-link active" data-section="home">
-            <i class="fas fa-home"></i>
-            <span>Home</span>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#awards">Awards</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/rayan-pinto-0848892a5/" target="_blank" class="social-link">
+            <i class="fab fa-linkedin"></i>
           </a>
-          <a href="#about" class="nav-link" data-section="about">
-            <i class="fas fa-user"></i>
-            <span>About</span>
+          <a href="https://github.com/RayanPinto" target="_blank" class="social-link">
+            <i class="fab fa-github"></i>
           </a>
-          <a href="#skills" class="nav-link" data-section="skills">
-            <i class="fas fa-code"></i>
-            <span>Skills</span>
-          </a>
-          <a href="#projects" class="nav-link" data-section="projects">
-            <i class="fas fa-project-diagram"></i>
-            <span>Projects</span>
-          </a>
-          <a href="#education" class="nav-link" data-section="education">
-            <i class="fas fa-graduation-cap"></i>
-            <span>Education</span>
-          </a>
-          <a href="#awards" class="nav-link" data-section="awards">
-            <i class="fas fa-trophy"></i>
-            <span>Awards</span>
-          </a>
-          <a href="#contact" class="nav-link" data-section="contact">
+          <a href="mailto:rayanpinto9482@gmail.com" class="social-link">
             <i class="fas fa-envelope"></i>
-            <span>Contact</span>
           </a>
         </div>
-
-        <div class="nav-toggle" id="nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <!-- Theme Toggle -->
-        <div class="theme-toggle" id="theme-toggle">
-          <i class="fas fa-moon"></i>
-        </div>
       </div>
-    </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
-      <!-- Home Section -->
-      <section id="home" class="section home-section">
-        <div class="background-animation">
-          <div class="floating-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-            <div class="shape shape-4"></div>
-            <div class="shape shape-5"></div>
-          </div>
-          <div class="particles-container" id="particles"></div>
-        </div>
-
-        <div class="container">
-          <div class="home-content">
-            <div class="home-text" data-aos="fade-up" data-aos-delay="200">
-              <div class="greeting">
-                <span class="wave">👋</span>
-                <span class="greeting-text">Hello, I'm</span>
-              </div>
-
-              <h1 class="main-title">
-                <span class="title-line">Rayan Pinto</span>
-                <span class="title-subtitle">Software Engineer | CS & Business Systems Student</span>
-              </h1>
-
-              <div class="typing-container">
-                <span class="typing-text" id="typing-text"></span>
-                <span class="typing-cursor">|</span>
-              </div>
-
-              <p class="home-description">
-                Computer Science and Business Systems student with a solid foundation in full-stack development and hands-on experience building scalable web and mobile applications.
-              </p>
-
-              <div class="home-buttons">
-                <a href="#projects" class="btn btn-primary ripple-effect">
-                  <span>View My Work</span>
-                  <i class="fas fa-arrow-right"></i>
-                </a>
-                <a
-                  href="https://drive.google.com/uc?export=download&id=1OVjXKelHLoLMy36PRj_eZEJMrKw6nAMg
-"
-                  download
-                  class="btn btn-secondary ripple-effect"
-                >
-                  <span>Download CV</span>
-                  <i class="fas fa-download"></i>
-                </a>
-              </div>
-            </div>
-
-            <div class="home-visual" data-aos="fade-left" data-aos-delay="400">
-              <div class="profile-card">
-                <div class="profile-image">
-                  <img src="about.jpg" alt="Rayan Pinto" class="profile-img" />
-                  <div class="profile-glow"></div>
-                </div>
-                <div class="profile-stats">
-                  <div class="stat">
-                    <span class="stat-number">2</span>
-                    <span class="stat-label">Awards</span>
-                  </div>
-                  <div class="stat">
-                    <span class="stat-number">6+</span>
-                    <span class="stat-label">Projects</span>
-                  </div>
-                  <div class="stat">
-                    <span class="stat-number">20+</span>
-                    <span class="stat-label">Technologies</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
-            <span>Scroll Down</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- About Section -->
-      <section id="about" class="section about-section">
-        <div class="container">
-          <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title">About Me</h2>
-            <p class="section-subtitle">Get to know me better</p>
-          </div>
-
-          <div class="about-content">
-            <div class="about-text" data-aos="fade-right" data-aos-delay="200">
-              <h3 class="about-heading">Software Engineer</h3>
-              <p class="about-description">
-                Computer Science and Business Systems student with a solid foundation in full-stack development and hands-on experience building scalable web and mobile applications. Contributed to the design and implementation of reliable backend APIs, user-friendly interfaces, and database solutions. A fast learner, eager to grow, and motivated to apply skills to create meaningful, real-world solutions.
-              </p>
-
-              <div class="about-highlights">
-                <div class="highlight">
-                  <i class="fas fa-code"></i>
-                  <span>Full-Stack Development</span>
-                </div>
-                <div class="highlight">
-                  <i class="fas fa-mobile-alt"></i>
-                  <span>Mobile App Development</span>
-                </div>
-                <div class="highlight">
-                  <i class="fas fa-brain"></i>
-                  <span>Machine Learning & AI</span>
-                </div>
-                <div class="highlight">
-                  <i class="fas fa-shield-alt"></i>
-                  <span>Privacy & Security Systems</span>
-                </div>
-              </div>
-
-              <div class="about-stats">
-                <div class="stat-card">
-                  <div class="stat-icon">
-                    <i class="fas fa-code"></i>
-                  </div>
-                  <div class="stat-info">
-                    <h4>20+</h4>
-                    <p>Technologies</p>
-                  </div>
-                </div>
-                <div class="stat-card">
-                  <div class="stat-icon">
-                    <i class="fas fa-project-diagram"></i>
-                  </div>
-                  <div class="stat-info">
-                    <h4>6+</h4>
-                    <p>Projects</p>
-                  </div>
-                </div>
-                <div class="stat-card">
-                  <div class="stat-icon">
-                    <i class="fas fa-trophy"></i>
-                  </div>
-                  <div class="stat-info">
-                    <h4>2</h4>
-                    <p>Awards</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="about-visual" data-aos="fade-left" data-aos-delay="400">
-              <div class="about-image-container">
-                <img src="about.jpg" alt="Rayan Pinto" class="about-image" />
-                <div class="about-image-overlay">
-                  <div class="overlay-content">
-                    <h4>Rayan Pinto</h4>
-                    <p>Software Engineer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Skills Section -->
-      <section id="skills" class="section skills-section">
-        <div class="container">
-          <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <p class="section-subtitle">Technologies I work with</p>
-          </div>
-
-          <div class="skills-content">
-            <div class="skills-categories">
-              <div
-                class="skill-category"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                <h3 class="category-title">
-                  <i class="fas fa-code"></i>
-                  Programming Languages
-                </h3>
-                <div class="skills-grid">
-                  <div class="skill-item" data-skill="C">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
-                        alt="C"
-                      />
-                    </div>
-                    <div class="skill-name">C</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="90"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="C++">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
-                        alt="C++"
-                      />
-                    </div>
-                    <div class="skill-name">C++</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="85"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="Python">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                        alt="Python"
-                      />
-                    </div>
-                    <div class="skill-name">Python</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="95"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="Java">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-                        alt="Java"
-                      />
-                    </div>
-                    <div class="skill-name">Java</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="80"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="JavaScript">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                        alt="JavaScript"
-                      />
-                    </div>
-                    <div class="skill-name">JavaScript</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="90"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="Dart">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
-                        alt="Dart"
-                      />
-                    </div>
-                    <div class="skill-name">Dart</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="85"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="Golang">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"
-                        alt="Golang"
-                      />
-                    </div>
-                    <div class="skill-name">Golang</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="75"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="skill-category"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <h3 class="category-title">
-                  <i class="fas fa-mobile-alt"></i>
-                  Frameworks & Libraries
-                </h3>
-                <div class="skills-grid">
-                  <div class="skill-item" data-skill="Flutter">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
-                        alt="Flutter"
-                      />
-                    </div>
-                    <div class="skill-name">Flutter</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="90"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="React.js">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                        alt="React.js"
-                      />
-                    </div>
-                    <div class="skill-name">React.js</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="85"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="NodeJS">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                        alt="NodeJS"
-                      />
-                    </div>
-                    <div class="skill-name">NodeJS</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="80"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="Express.js">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
-                        alt="Express.js"
-                      />
-                    </div>
-                    <div class="skill-name">Express.js</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="85"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="Django">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
-                        alt="Django"
-                      />
-                    </div>
-                    <div class="skill-name">Django</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="80"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="Vite">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg"
-                        alt="Vite"
-                      />
-                    </div>
-                    <div class="skill-name">Vite</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="75"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="skill-category"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <h3 class="category-title">
-                  <i class="fas fa-brain"></i>
-                  AI & Machine Learning
-                </h3>
-                <div class="skills-grid">
-                  <div class="skill-item" data-skill="TensorFlow">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
-                        alt="TensorFlow"
-                      />
-                    </div>
-                    <div class="skill-name">TensorFlow</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="85"></div>
-                    </div>
-                  </div>
-                   <div class="skill-item" data-skill="NumPy">
-    <div class="skill-icon">
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
-        alt="NumPy"
-      />
-    </div>
-    <div class="skill-name">NumPy</div>
-    <div class="skill-progress">
-      <div class="progress-bar" data-progress="88"></div>
-    </div>
-  </div>
-
-  <!-- Pandas -->
-  <div class="skill-item" data-skill="Pandas">
-    <div class="skill-icon">
-      <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
-        alt="Pandas"
-      />
-    </div>
-    <div class="skill-name">Pandas</div>
-    <div class="skill-progress">
-      <div class="progress-bar" data-progress="92"></div>
-    </div>
-  </div>
-                  <div class="skill-item" data-skill="Scikit-learn">
-                    <div class="skill-icon">
-                      <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
-                        alt="Scikit-learn"
-                      />
-                    </div>
-                    <div class="skill-name">Scikit-learn</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="90"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="Whisper">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                        alt="Whisper"
-                      />
-                    </div>
-                    <div class="skill-name">Whisper</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="85"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="CNN">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
-                        alt="CNN"
-                      />
-                    </div>
-                    <div class="skill-name">CNN</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="88"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="RNN">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
-                        alt="RNN"
-                      />
-                    </div>
-                    <div class="skill-name">RNN</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="85"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="BERT">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                        alt="BERT"
-                      />
-                    </div>
-                    <div class="skill-name">BERT</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="80"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="skill-category"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <h3 class="category-title">
-                  <i class="fas fa-database"></i>
-                  Databases & Tools
-                </h3>
-                <div class="skills-grid">
-                  <div class="skill-item" data-skill="MongoDB">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-                        alt="MongoDB"
-                      />
-                    </div>
-                    <div class="skill-name">MongoDB</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="80"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="MySQL">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-                        alt="MySQL"
-                      />
-                    </div>
-                    <div class="skill-name">MySQL</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="85"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="Firebase">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-                        alt="Firebase"
-                      />
-                    </div>
-                    <div class="skill-name">Firebase</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="80"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="Git">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-                        alt="Git"
-                      />
-                    </div>
-                    <div class="skill-name">Git</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="90"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="Docker">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-                        alt="Docker"
-                      />
-                    </div>
-                    <div class="skill-name">Docker</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="75"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item" data-skill="Mongoose">
-                    <div class="skill-icon">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-                        alt="Mongoose"
-                      />
-                    </div>
-                    <div class="skill-name">Mongoose</div>
-                    <div class="skill-progress">
-                      <div class="progress-bar" data-progress="80"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Projects Section -->
-      <section id="projects" class="section projects-section">
-        <div class="container">
-          <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">Some of my recent work</p>
-          </div>
-
-          <div class="projects-grid">
-            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-              <div class="project-image">
-                <img
-                  src="assets/plant.png"
-                  alt="Plant Disease Prediction"
-                  class="project-img"
-                />
-                <div class="project-overlay">
-                  <div class="project-links">
-                    <a href="https://github.com/RayanPinto/Plant_Disease_Prediction" class="project-link">
-                      <i class="fab fa-github"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3 class="project-title">Plant Disease Prediction</h3>
-                <p class="project-description">
-                  AI-powered web application that detects plant diseases from
-                  leaf images using CNN with 90%+ accuracy.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">TensorFlow</span>
-                  <span class="tech-tag">Flask</span>
-                  <span class="tech-tag">CNN</span>
-                </div>
-              </div>
-            </div>
-            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-              <div class="project-image">
-                <img
-                  src="assets/obscura.png"
-                  alt="Obscura Privacy System"
-                  class="project-img"
-                />
-                <div class="project-overlay">
-                  <div class="project-links">
-                    <a href="https://github.com/RayanPinto/" class="project-link">
-                      <i class="fab fa-github"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3 class="project-title">Obscura (Team Project): Privacy-Preserving Data System</h3>
-                <p class="project-description">
-                  Developed a mobile-first system with client-side encryption, differential privacy, and synthetic data generation. Built survey + OCR pipelines (AES-256, Supabase) and applied CTGAN + Differential Privacy for secure analysis. Designed multi-layer privacy architecture protecting against inference, and secure threats.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">React Native</span>
-                  <span class="tech-tag">Supabase</span>
-                  <span class="tech-tag">AES</span>
-                  <span class="tech-tag">Differential Privacy</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-              <div class="project-image">
-                <img
-                  src="assets/Multimodal Agentic Framework for Behavioral Profiling.png"
-                  alt="Multimodal Agentic Framework for Behavioral Profiling"
-                  class="project-img"
-                />
-                <div class="project-overlay">
-                  <div class="project-links">
-                    <a href="https://github.com/RayanPinto/" class="project-link">
-                      <i class="fab fa-github"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3 class="project-title">Multimodal Agentic Framework for Behavioral Profiling (Team Project, In Progress)</h3>
-                <p class="project-description">
-                  Building a real-time system extracting 40+ behavioral signals from speech and facial data. Integrating ADK agent for contextual attention/fatigue scoring with low-latency optimization. Designing evaluation harness and logging framework for multi-session performance testing.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">ADK</span>
-                  <span class="tech-tag">Whisper API</span>
-                  <span class="tech-tag">DeepFace</span>
-                </div>
-              </div>
-            </div>
-            
-
-            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-              <div class="project-image">
-                <img
-                  src="assets/devquery.png"
-                  alt="DevQueryX"
-                  class="project-img"
-                />
-                <div class="project-overlay">
-                  <div class="project-links">
-                    <a href="https://github.com/RayanPinto/DevQueryX" class="project-link">
-                      <i class="fab fa-github"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3 class="project-title">DevQueryX</h3>
-                <p class="project-description">
-                  A smart multi-agent system that classifies and routes
-                  developer queries to the appropriate AI agents — either for
-                  code generation, debugging, or conceptual explanations.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">Google API</span>
-                  <span class="tech-tag">MongoDB</span>
-                  <span class="tech-tag">ADK</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-card" data-aos="fade-up" data-aos-delay="400">
-              <div class="project-image">
-                <img
-                  src="assets/hi.png"
-                  alt="E-Commerce App"
-                  class="project-img"
-                />
-                <div class="project-overlay">
-                  <div class="project-links">
-                    <a href="https://github.com/RayanPinto/E-Commerce_App" class="project-link">
-                      <i class="fab fa-github"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3 class="project-title">E-Commerce App</h3>
-                <p class="project-description">
-                  Cross-platform mobile app with authentication, product
-                  browsing, cart, and secure checkout system.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">Flutter</span>
-                  <span class="tech-tag">Node.js</span>
-                  <span class="tech-tag">MongoDB</span>
-                  <span class="tech-tag">JWT</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-card" data-aos="fade-up" data-aos-delay="500">
-              <div class="project-image">
-                <img
-                  src="assets/emotion.png"
-                  alt="Emotion Detection"
-                  class="project-img"
-                />
-                <div class="project-overlay">
-                  <div class="project-links">
-                    <a href="https://github.com/RayanPinto/Rayan_Emotion_Detector" class="project-link">
-                      <i class="fab fa-github"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3 class="project-title">Emotion Detection System</h3>
-                <p class="project-description">
-                  Real-time emotion detection from webcam feed recognizing 7
-                  different emotions with trend visualization.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">DeepFace</span>
-                  <span class="tech-tag">OpenCV</span>
-                  <span class="tech-tag">Matplotlib</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-card" data-aos="fade-up" data-aos-delay="600">
-              <div class="project-image">
-                <img
-                  src="assets/sentiment.png"
-                  alt="Sentiment Analysis"
-                  class="project-img"
-                />
-                <div class="project-overlay">
-                  <div class="project-links">
-                    <a href="https://github.com/RayanPinto/Sentiment-Analysis" class="project-link">
-                      <i class="fab fa-github"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3 class="project-title">Sentiment Analysis System</h3>
-                <p class="project-description">
-                  Text classification system for sentiment analysis using NLTK
-                  and machine learning algorithms.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">NLTK</span>
-                  <span class="tech-tag">Scikit-learn</span>
-                  <span class="tech-tag">TF-IDF</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Education Section -->
-      <section id="education" class="section education-section">
-        <div class="container">
-          <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title">Education</h2>
-            <p class="section-subtitle">Academic Background</p>
-          </div>
-
-          <div class="education-content">
-            <div class="education-timeline">
-              <div class="education-item" data-aos="fade-up" data-aos-delay="100">
-                <div class="education-icon">
-                  <i class="fas fa-graduation-cap"></i>
-                </div>
-                <div class="education-details">
-                  <h3 class="education-title">B.E. in Computer Science and Business Systems</h3>
-                  <p class="education-institution">St. Joseph Engineering College, Mangalore</p>
-                  <p class="education-duration">2022 - 2026</p>
-                  <p class="education-grade">CGPA: 9.22/10</p>
-                </div>
-              </div>
-              
-              <div class="education-item" data-aos="fade-up" data-aos-delay="200">
-                <div class="education-icon">
-                  <i class="fas fa-school"></i>
-                </div>
-                <div class="education-details">
-                  <h3 class="education-title">Pre-University Course</h3>
-                  <p class="education-institution">St. Aloysius PU College, Mangalore</p>
-                  <p class="education-duration">2020 - 2022</p>
-                  <p class="education-grade">Marks: 97%</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Awards Section -->
-      <section id="awards" class="section awards-section">
-        <div class="container">
-          <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title">Awards & Achievements</h2>
-            <p class="section-subtitle">Recognition for excellence</p>
-          </div>
-
-          <div class="awards-content">
-            <div class="awards-grid">
-              <div class="award-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="award-icon">
-                  <i class="fas fa-trophy"></i>
-                </div>
-                <div class="award-details">
-                  <h3 class="award-title">HackToFuture 2.0 Winner</h3>
-                  <p class="award-organization">EGDK India Pvt Ltd</p>
-                  <p class="award-date">February 2024</p>
-                  <p class="award-description">
-                    Awarded for developing the most innovative and functional project among a competitive field of participants.
-                  </p>
-                </div>
-              </div>
-
-              <div class="award-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="award-icon">
-                  <i class="fas fa-medal"></i>
-                </div>
-                <div class="award-details">
-                  <h3 class="award-title">HackEVL Winner</h3>
-                  <p class="award-organization">Google Developer Group</p>
-                  <p class="award-date">September 2023</p>
-                  <p class="award-description">
-                    Awarded for building a high-impact and technically innovative solution during a competitive weekend hackathon.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact" class="section contact-section">
-        <div class="container">
-          <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Let's work together</p>
-          </div>
-
-          <div class="contact-content">
-            <div
-              class="contact-info"
-              data-aos="fade-right"
-              data-aos-delay="200"
-            >
-              <h3 class="contact-heading">Let's Connect</h3>
-              <p class="contact-description">
-                I'm always open to discussing new opportunities, interesting
-                projects, or just having a chat about technology and innovation.
-              </p>
-
-              <div class="contact-methods">
-                <div class="contact-method">
-                  <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
-                  </div>
-                  <div class="contact-details">
-                    <h4>Email</h4>
-                    <a href="mailto:rayanpinto9482@gmail.com"
-                      >rayanpinto9482@gmail.com</a
-                    >
-                  </div>
-                </div>
-
-                <div class="contact-method">
-                  <div class="contact-icon">
-                    <i class="fas fa-phone"></i>
-                  </div>
-                  <div class="contact-details">
-                    <h4>Phone</h4>
-                    <a href="tel:+919901898521">+91 9901898521</a>
-                  </div>
-                </div>
-
-                <a href="https://www.linkedin.com/in/rayan-pinto-0848892a5/" 
-   target="_blank" 
-   class="contact-method" 
-   style="text-decoration: none; color: inherit;">
-  <div class="contact-icon">
-    <i class="fab fa-linkedin"></i>
-  </div>
-  <div class="contact-details">
-    <h4>LinkedIn</h4>
-    <p>Rayan Pinto</p>
-  </div>
-</a>
-
-
-               <a href="https://github.com/RayanPinto" target="_blank" style="text-decoration: none; color: inherit;">
-  <div class="contact-method">
-    <div class="contact-icon">
-      <i class="fab fa-github"></i>
-    </div>
-    <div class="contact-details">
-      <h4>GitHub</h4>
-      <p>RayanPinto</p>
-    </div>
-  </div>
-</a>
-
-              </div>
-            </div>
-
-            <div
-              class="contact-form-container"
-              data-aos="fade-left"
-              data-aos-delay="400"
-            >
-              <form class="contact-form" id="contact-form">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    class="form-input"
-                  />
-                  <label for="name" class="form-label">Your Name</label>
-                </div>
-
-                <div class="form-group">
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    class="form-input"
-                  />
-                  <label for="email" class="form-label">Your Email</label>
-                </div>
-
-                <div class="form-group">
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    required
-                    class="form-input"
-                  />
-                  <label for="subject" class="form-label">Subject</label>
-                </div>
-
-                <div class="form-group">
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    class="form-input form-textarea"
-                  ></textarea>
-                  <label for="message" class="form-label">Your Message</label>
-                </div>
-
-                <button
-                  type="submit"
-                  class="btn btn-primary btn-full ripple-effect"
-                >
-                  <span>Send Message</span>
-                  <i class="fas fa-paper-plane"></i>
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-logo">
-            <span class="logo-text">Rayan</span>
-            <span class="logo-dot">.</span>
-          </div>
-
-          <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#education">Education</a>
-            <a href="#awards">Awards</a>
-            <a href="#contact">Contact</a>
-          </div>
-
-          <div class="footer-social">
-            <a
-              href="https://www.linkedin.com/in/rayan-pinto-0848892a5/"
-              target="_blank"
-              class="social-link"
-            >
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a
-              href="https://github.com/RayanPinto"
-              target="_blank"
-              class="social-link"
-            >
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="mailto:rayanpinto9482@gmail.com" class="social-link">
-              <i class="fas fa-envelope"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <p>&copy; 2025 Rayan Pinto. All rights reserved.</p>
-        </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Rayan Pinto. All rights reserved.</p>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="back-to-top">
-      <i class="fas fa-arrow-up"></i>
-    </button>
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.16/typed.umd.js"></script>
+  <!-- JavaScript Libraries -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.16/typed.umd.js"></script>
 
-    <!-- Custom JavaScript -->
-    <script src="js/main.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/particles.js"></script>
-  </body>
+  <!-- Custom JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/particles.js"></script>
+</body>
+
 </html>
