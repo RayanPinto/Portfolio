@@ -341,19 +341,7 @@ function initContactForm() {
         }, 2000);
     });
     
-    // Form input animations
-    const formInputs = document.querySelectorAll('.form-input');
-    formInputs.forEach(input => {
-        input.addEventListener('focus', function() {
-            this.parentElement.classList.add('focused');
-        });
-        
-        input.addEventListener('blur', function() {
-            if (!this.value) {
-                this.parentElement.classList.remove('focused');
-            }
-        });
-    });
+    // Form input focus effects (removed floating label animations)
 }
 
 // Email validation

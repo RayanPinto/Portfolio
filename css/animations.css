@@ -635,38 +635,43 @@
 
 .form-group {
   position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
 }
 
 .form-input {
   width: 100%;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.05);
+  padding: 0.875rem 1rem;
+  background: var(--bg-light);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   color: var(--text-color);
   font-size: 1rem;
+  font-family: var(--font-primary);
   transition: all var(--transition-normal);
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
 }
 
 .form-input:focus {
   outline: none;
   border-color: var(--primary-color);
-  background: rgba(0, 171, 240, 0.05);
-}
-
-.form-input:focus + .form-label,
-.form-input:not(:placeholder-shown) + .form-label {
-  transform: translateY(-25px) scale(0.8);
-  color: var(--primary-color);
+  background: var(--bg-color);
+  box-shadow: 0 0 0 3px rgba(0, 171, 240, 0.15);
 }
 
 .form-label {
-  position: absolute;
-  left: 1rem;
-  top: 1rem;
-  color: var(--text-muted);
-  transition: all var(--transition-normal);
-  pointer-events: none;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .form-textarea {
