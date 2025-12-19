@@ -156,15 +156,24 @@
 /* Skills Section */
 .skills-section {
   background: var(--bg-color);
-  overflow-x: hidden;
-  width: 100%;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  position: relative;
+}
+
+.skills-section * {
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 .skills-categories {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .skill-category {
@@ -172,6 +181,10 @@
   border-radius: var(--radius-xl);
   padding: 2rem;
   border: 1px solid var(--border-color);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .category-title {
@@ -194,6 +207,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .skill-item {
@@ -205,6 +222,9 @@
   transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .skill-item::before {
@@ -300,15 +320,25 @@
 /* Projects Section */
 .projects-section {
   background: var(--secondary-color);
-  overflow-x: hidden;
-  width: 100%;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  position: relative;
+}
+
+.projects-section * {
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .project-card {
@@ -317,6 +347,9 @@
   overflow: hidden;
   border: 1px solid var(--border-color);
   transition: all var(--transition-normal);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   position: relative;
 }
 

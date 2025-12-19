@@ -124,12 +124,38 @@
         font-size: 2rem;
     }
     
+    .skills-section,
+    .projects-section,
+    .awards-section {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
     }
     
     .projects-grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .awards-grid {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .skill-category {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 }
 
@@ -402,6 +428,9 @@
     .project-card {
         max-width: 500px;
         margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
     
     /* Timeline */
@@ -657,6 +686,10 @@
     
     .skill-category {
         padding: 1rem;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
     }
     
     .category-title {
@@ -664,13 +697,31 @@
         margin-bottom: 1.5rem;
     }
     
+    .skills-section {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
     .skills-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .skill-category {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
     }
     
     .skill-item {
         padding: 1rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
     
     .skill-icon {
@@ -686,6 +737,10 @@
     /* Projects Section */
     .project-card {
         margin: 0;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
     
     .project-content {
