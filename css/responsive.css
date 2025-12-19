@@ -516,6 +516,11 @@
         font-size: 0.8rem;
     }
     
+    /* Section scroll margin for mobile */
+    .section {
+        scroll-margin-top: 80px;
+    }
+    
     /* Education Section - Mobile */
     .education-timeline {
         padding-left: 0;

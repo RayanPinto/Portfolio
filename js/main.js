@@ -196,6 +196,7 @@ function initTypingEffect() {
 // Smooth Scrolling - Optimized for mobile
 function initSmoothScrolling() {
     const links = document.querySelectorAll('a[href^="#"]');
+    const navbar = document.getElementById('navbar');
     
     links.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -207,18 +208,35 @@ function initSmoothScrolling() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 70; // Account for navbar
-                
-                // Use native smooth scroll with better mobile support
-                if ('scrollBehavior' in document.documentElement.style) {
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                } else {
-                    // Fallback for older browsers
-                    smoothScrollTo(offsetTop, 600);
+                // Close mobile menu if open
+                const navMenu = document.getElementById('nav-menu');
+                const navToggle = document.getElementById('nav-toggle');
+                if (navMenu && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    if (navToggle) navToggle.classList.remove('active');
                 }
+                
+                // Small delay to ensure menu closes before scrolling
+                setTimeout(() => {
+                    // Get navbar height dynamically
+                    const navbarHeight = navbar ? navbar.offsetHeight : 70;
+                    
+                    // Calculate offset using getBoundingClientRect for accuracy
+                    const rect = targetSection.getBoundingClientRect();
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const offsetTop = rect.top + scrollTop - navbarHeight - 10; // Extra 10px for spacing
+                    
+                    // Use native smooth scroll with better mobile support
+                    if ('scrollBehavior' in document.documentElement.style) {
+                        window.scrollTo({
+                            top: Math.max(0, offsetTop), // Ensure we don't scroll to negative position
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        // Fallback for older browsers
+                        smoothScrollTo(Math.max(0, offsetTop), 600);
+                    }
+                }, 100);
             }
         }, { passive: false });
     });
