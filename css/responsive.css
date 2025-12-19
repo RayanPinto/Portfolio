@@ -4,12 +4,36 @@
 @media (max-width: 768px) {
     html, body {
         overflow-x: hidden !important;
+        overflow-y: auto;
         width: 100% !important;
         max-width: 100% !important;
         position: relative;
         -webkit-overflow-scrolling: touch;
         touch-action: pan-y;
         scroll-behavior: smooth;
+    }
+    
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+    }
+    
+    html, body {
+        -ms-overflow-style: none !important;
+        scrollbar-width: none !important;
+    }
+    
+    * {
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+    }
+    
+    *::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
     }
     
     .main-content {
@@ -344,14 +368,28 @@
         justify-content: center;
     }
     
+    .profile-card {
+        padding: 2.5rem;
+        min-width: 300px;
+        max-width: 400px;
+    }
+    
     .profile-img {
-        width: 180px;
-        height: 180px;
+        width: 240px;
+        height: 240px;
     }
     
     .profile-glow {
-        width: 200px;
-        height: 200px;
+        width: 260px;
+        height: 260px;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 0.95rem;
     }
     
     /* About Section */
@@ -385,8 +423,18 @@
     
     /* Skills Section */
     .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 1rem;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box;
+    }
+    
+    .skills-grid > * {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
     }
     
     .skill-category {
@@ -419,10 +467,18 @@
     }
     
     .projects-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: 1.5rem;
-        width: 100%;
-        max-width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box;
+    }
+    
+    .projects-grid > * {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
     }
     
     .project-card {
@@ -575,30 +631,33 @@
     }
     
     .profile-card {
-        padding: 1.5rem;
+        padding: 2rem;
+        min-width: auto;
+        max-width: 100%;
     }
     
     .profile-img {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
     }
     
     .profile-glow {
-        width: 170px;
-        height: 170px;
+        width: 220px;
+        height: 220px;
     }
     
     .profile-stats {
         grid-template-columns: 1fr;
-        gap: 0.8rem;
+        gap: 1rem;
+        margin-top: 1.5rem;
     }
     
     .stat-number {
-        font-size: 1.3rem;
+        font-size: 1.6rem;
     }
     
     .stat-label {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
     
     /* Section scroll margin for mobile */
@@ -735,10 +794,24 @@
     }
     
     /* Projects Section */
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box;
+    }
+    
+    .projects-grid > * {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+    
     .project-card {
         margin: 0;
-        width: 100%;
-        max-width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
         box-sizing: border-box;
         overflow-x: hidden;
     }
@@ -1037,14 +1110,26 @@
         font-size: 1.2rem;
     }
     
+    .profile-card {
+        padding: 1.5rem;
+    }
+    
     .profile-img {
-        width: 120px;
-        height: 120px;
+        width: 180px;
+        height: 180px;
     }
     
     .profile-glow {
-        width: 140px;
-        height: 140px;
+        width: 200px;
+        height: 200px;
+    }
+    
+    .stat-number {
+        font-size: 1.4rem;
+    }
+    
+    .stat-label {
+        font-size: 0.85rem;
     }
     
     .section {
@@ -1104,7 +1189,17 @@
     }
     
     .projects-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box;
+    }
+    
+    .projects-grid > * {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
     }
     
     .skills-grid {
