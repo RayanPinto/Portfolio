@@ -6,10 +6,11 @@
 }
 
 .about-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .about-heading {
@@ -17,6 +18,7 @@
   font-weight: 700;
   color: var(--text-color);
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .about-description {
@@ -24,6 +26,8 @@
   color: var(--text-muted);
   line-height: 1.8;
   margin-bottom: 2rem;
+  text-align: center;
+  max-width: 800px;
 }
 
 .about-highlights {
@@ -31,6 +35,9 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-bottom: 2rem;
+  width: 100%;
+  max-width: 600px;
+  justify-items: center;
 }
 
 .highlight {
@@ -63,17 +70,23 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .stat-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  gap: 0.8rem;
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   transition: all var(--transition-normal);
+  text-align: center;
 }
 
 .stat-card:hover {
@@ -98,8 +111,12 @@
   font-size: 1.2rem;
 }
 
+.stat-info {
+  text-align: center;
+}
+
 .stat-info h4 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: var(--primary-color);
   margin-bottom: 0.2rem;
@@ -108,54 +125,9 @@
 .stat-info p {
   color: var(--text-muted);
   font-size: 0.9rem;
-}
-
-.about-image-container {
-  position: relative;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
-}
-
-.about-image {
-  width: 100%;
-  height: 600px;
-  
-  object-fit: cover;
-  object-position: center middle;
-  transition: transform var(--transition-slow);
-}
-
-.about-image-container:hover .about-image {
-  transform: scale(1.05);
-}
-
-.about-image-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-  padding: 2rem;
-  transform: translateY(100%);
-  transition: transform var(--transition-normal);
-}
-
-.about-image-container:hover .about-image-overlay {
-  transform: translateY(0);
-}
-
-.overlay-content h4 {
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.overlay-content p {
-  color: var(--primary-color);
   font-weight: 500;
 }
+
 
 /* Skills Section */
 .skills-section {

@@ -314,9 +314,11 @@
     
     /* About Section */
     .about-content {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: center;
         gap: 2rem;
         text-align: center;
+        max-width: 100%;
     }
     
     .about-heading {
@@ -331,9 +333,6 @@
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .about-image {
-        height: 300px;
-    }
     
     /* Skills Section */
     .skills-grid {
@@ -613,10 +612,6 @@
     
     .stat-info h4 {
         font-size: 1.3rem;
-    }
-    
-    .about-image {
-        height: 250px;
     }
     
     /* Skills Section */
@@ -984,7 +979,6 @@
 /* High DPI Displays */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .profile-img,
-    .about-image,
     .project-img {
         image-rendering: -webkit-optimize-contrast;
         image-rendering: crisp-edges;
