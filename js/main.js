@@ -52,8 +52,9 @@ function initNavigation() {
         });
     });
 
-    // Navbar scroll effect
-    window.addEventListener('scroll', function() {
+    // Navbar scroll effect - optimized for mobile
+    let ticking = false;
+    function updateNavbar() {
         if (window.scrollY > 100) {
             navbar.style.background = 'rgba(8, 27, 41, 0.98)';
             navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
@@ -61,7 +62,15 @@ function initNavigation() {
             navbar.style.background = 'rgba(8, 27, 41, 0.95)';
             navbar.style.boxShadow = 'none';
         }
-    });
+        ticking = false;
+    }
+    
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(updateNavbar);
+            ticking = true;
+        }
+    }, { passive: true });
 
     // Active navigation highlighting
     const sections = document.querySelectorAll('section[id]');
@@ -82,7 +91,19 @@ function initNavigation() {
         });
     }
 
-    window.addEventListener('scroll', updateActiveNav);
+    // Optimize active nav update
+    let navTicking = false;
+    function optimizedUpdateActiveNav() {
+        updateActiveNav();
+        navTicking = false;
+    }
+    
+    window.addEventListener('scroll', function() {
+        if (!navTicking) {
+            window.requestAnimationFrame(optimizedUpdateActiveNav);
+            navTicking = true;
+        }
+    }, { passive: true });
     updateActiveNav(); // Initial call
 }
 
@@ -172,7 +193,7 @@ function initTypingEffect() {
     setTimeout(type, 1000);
 }
 
-// Smooth Scrolling
+// Smooth Scrolling - Optimized for mobile
 function initSmoothScrolling() {
     const links = document.querySelectorAll('a[href^="#"]');
     
@@ -181,18 +202,50 @@ function initSmoothScrolling() {
             e.preventDefault();
             
             const targetId = this.getAttribute('href');
+            if (targetId === '#' || targetId === '') return;
+            
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
                 const offsetTop = targetSection.offsetTop - 70; // Account for navbar
                 
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+                // Use native smooth scroll with better mobile support
+                if ('scrollBehavior' in document.documentElement.style) {
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // Fallback for older browsers
+                    smoothScrollTo(offsetTop, 600);
+                }
             }
-        });
+        }, { passive: false });
     });
+}
+
+// Smooth scroll fallback function for older browsers
+function smoothScrollTo(target, duration) {
+    const start = window.pageYOffset;
+    const distance = target - start;
+    let startTime = null;
+    
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = easeInOutQuad(timeElapsed, start, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+    
+    function easeInOutQuad(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+    
+    requestAnimationFrame(animation);
 }
 
 // Scroll Animations
@@ -291,13 +344,23 @@ function initBackToTop() {
     
     if (!backToTopBtn) return;
     
-    window.addEventListener('scroll', function() {
+    // Optimized scroll handler for back to top button
+    let scrollTicking = false;
+    function updateBackToTop() {
         if (window.scrollY > 300) {
             backToTopBtn.classList.add('visible');
         } else {
             backToTopBtn.classList.remove('visible');
         }
-    });
+        scrollTicking = false;
+    }
+    
+    window.addEventListener('scroll', function() {
+        if (!scrollTicking) {
+            window.requestAnimationFrame(updateBackToTop);
+            scrollTicking = true;
+        }
+    }, { passive: true });
     
     backToTopBtn.addEventListener('click', function() {
         window.scrollTo({
