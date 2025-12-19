@@ -764,6 +764,22 @@
         font-size: 1rem;
     }
     
+    /* Loading Screen - Mobile */
+    .loader {
+        max-width: 90%;
+        padding: 0 1.5rem;
+        gap: 1.2rem;
+    }
+    
+    .progress-bar-container {
+        height: 3px;
+    }
+    
+    .loader-text {
+        font-size: 1rem;
+        letter-spacing: 0.15em;
+    }
+    
     /* Custom Cursor - Hide on mobile */
     .custom-cursor,
     .custom-cursor-follower {

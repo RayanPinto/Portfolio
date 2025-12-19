@@ -15,20 +15,62 @@ document.addEventListener('DOMContentLoaded', function() {
     initAutoNavigation();
 });
 
-// Loading Screen
+// Loading Screen with Progress Bar
 function initLoadingScreen() {
     const loadingScreen = document.getElementById('loading-screen');
+    const progressBar = document.getElementById('progress-bar');
     
-    // Hide loading screen after page loads
-    window.addEventListener('load', function() {
-        setTimeout(() => {
-            loadingScreen.classList.add('hidden');
-            // Remove from DOM after animation
+    if (!loadingScreen || !progressBar) return;
+    
+    let progress = 0;
+    let progressInterval;
+    
+    // Simulate progress based on actual page loading
+    function updateProgress() {
+        // Check document ready state
+        if (document.readyState === 'complete') {
+            progress = 100;
+        } else if (document.readyState === 'interactive') {
+            progress = 70;
+        } else if (document.readyState === 'loading') {
+            progress = 30;
+        }
+        
+        // Update progress bar
+        progressBar.style.width = progress + '%';
+        
+        // If page is fully loaded, complete the progress
+        if (document.readyState === 'complete' && progress >= 100) {
+            clearInterval(progressInterval);
+            // Small delay to show 100% before hiding
             setTimeout(() => {
-                loadingScreen.remove();
-            }, 500);
-        }, 1000);
+                loadingScreen.classList.add('hidden');
+                // Remove from DOM after animation
+                setTimeout(() => {
+                    loadingScreen.remove();
+                }, 500);
+            }, 200);
+        }
+    }
+    
+    // Start progress simulation
+    progressInterval = setInterval(() => {
+        // Gradually increase progress if page is still loading
+        if (document.readyState !== 'complete' && progress < 90) {
+            progress += Math.random() * 3; // Random increment for natural feel
+            if (progress > 90) progress = 90; // Cap at 90% until complete
+        }
+        updateProgress();
+    }, 50); // Update every 50ms for smooth animation
+    
+    // Also check on load event
+    window.addEventListener('load', function() {
+        progress = 100;
+        updateProgress();
     });
+    
+    // Initial update
+    updateProgress();
 }
 
 // Navigation
