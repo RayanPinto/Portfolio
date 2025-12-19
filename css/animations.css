@@ -73,6 +73,7 @@
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
+  align-items: stretch;
 }
 
 .stat-card {
@@ -87,6 +88,8 @@
   border: 1px solid var(--border-color);
   transition: all var(--transition-normal);
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .stat-card:hover {
@@ -113,6 +116,13 @@
 
 .stat-info {
   text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
 }
 
 .stat-info h4 {
@@ -120,6 +130,13 @@
   font-weight: 700;
   color: var(--primary-color);
   margin-bottom: 0.2rem;
+  text-align: center;
+  width: 100%;
+  display: block;
+  line-height: 1.2;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .stat-info p {
@@ -132,6 +149,9 @@
 /* Skills Section */
 .skills-section {
   background: var(--bg-color);
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 .skills-categories {
@@ -273,6 +293,9 @@
 /* Projects Section */
 .projects-section {
   background: var(--secondary-color);
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 .projects-grid {

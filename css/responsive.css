@@ -44,6 +44,21 @@
         padding-left: 15px;
         padding-right: 15px;
     }
+    
+    /* Prevent horizontal scroll in specific sections */
+    .skills-section,
+    .projects-section,
+    .awards-section {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .section-header {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
 /* Large Desktop */
@@ -175,8 +190,8 @@
     .education-item .education-details {
         text-align: center !important;
         padding: 1.5rem !important;
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
         flex: 1;
         min-width: 0;
     }
@@ -364,9 +379,17 @@
     }
     
     /* Projects Section */
+    .projects-section {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        width: 100%;
+        max-width: 100%;
     }
     
     .project-card {
@@ -572,8 +595,8 @@
     .education-item .education-details {
         text-align: center !important;
         padding: 1.2rem !important;
-        padding-left: 0.8rem !important;
-        padding-right: 0.8rem !important;
+        padding-left: 1.2rem !important;
+        padding-right: 1.2rem !important;
         margin-left: 0 !important;
         flex: 1;
     }
@@ -614,6 +637,10 @@
     
     .stat-info h4 {
         font-size: 1.3rem;
+        min-width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
     /* Skills Section */
@@ -856,8 +883,8 @@
     .education-item .education-details {
         text-align: center !important;
         padding: 1rem !important;
-        padding-left: 0.7rem !important;
-        padding-right: 0.7rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
         margin-left: 0 !important;
         flex: 1;
     }
