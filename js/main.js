@@ -344,9 +344,14 @@ function initContactForm() {
         
         // Disable submit button and show loading state
         const submitButton = contactForm.querySelector('button[type="submit"]');
-        const originalButtonText = submitButton.innerHTML;
+        const buttonSpan = submitButton.querySelector('span');
+        const buttonIcon = submitButton.querySelector('i');
+        const originalButtonText = buttonSpan.textContent;
+        const originalIconClass = buttonIcon.className;
+        
         submitButton.disabled = true;
-        submitButton.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
+        buttonSpan.textContent = 'Sending...';
+        buttonIcon.className = 'fas fa-spinner fa-spin';
         
         // Show sending notification
         showNotification('Sending message...', 'info');
@@ -368,7 +373,8 @@ function initContactForm() {
                 
                 // Re-enable submit button
                 submitButton.disabled = false;
-                submitButton.innerHTML = originalButtonText;
+                buttonSpan.textContent = originalButtonText;
+                buttonIcon.className = originalIconClass;
             }, function(error) {
                 // Error
                 console.error('EmailJS Error:', error);
@@ -376,7 +382,8 @@ function initContactForm() {
                 
                 // Re-enable submit button
                 submitButton.disabled = false;
-                submitButton.innerHTML = originalButtonText;
+                buttonSpan.textContent = originalButtonText;
+                buttonIcon.className = originalIconClass;
             });
     });
     
