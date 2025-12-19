@@ -49,8 +49,14 @@ class ParticlesAnimation {
     
     resizeCanvas() {
         const rect = this.container.getBoundingClientRect();
-        this.canvas.width = rect.width;
+        // Ensure canvas doesn't exceed viewport width
+        const maxWidth = Math.min(rect.width, window.innerWidth);
+        this.canvas.width = maxWidth;
         this.canvas.height = rect.height;
+        
+        // Ensure canvas element respects max width
+        this.canvas.style.maxWidth = '100%';
+        this.canvas.style.width = '100%';
     }
     
     createParticles() {
@@ -253,8 +259,14 @@ class Background3D {
     
     resizeCanvas() {
         const rect = this.container.getBoundingClientRect();
-        this.canvas.width = rect.width;
+        // Ensure canvas doesn't exceed viewport width
+        const maxWidth = Math.min(rect.width, window.innerWidth);
+        this.canvas.width = maxWidth;
         this.canvas.height = rect.height;
+        
+        // Ensure canvas element respects max width
+        this.canvas.style.maxWidth = '100%';
+        this.canvas.style.width = '100%';
     }
     
     createPoints() {

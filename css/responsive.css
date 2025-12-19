@@ -3,9 +3,9 @@
 /* Global Mobile Fixes - Prevent Horizontal Scroll */
 @media (max-width: 768px) {
     html, body {
-        overflow-x: hidden;
-        width: 100%;
-        max-width: 100%;
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
         position: relative;
     }
     
@@ -15,13 +15,27 @@
         overflow-x: hidden;
     }
     
-    * {
-        max-width: 100%;
+    img, video, iframe, canvas, svg {
+        max-width: 100% !important;
+        height: auto;
     }
     
-    img, video, iframe, canvas, svg {
+    /* Prevent any element from causing horizontal scroll */
+    * {
+        max-width: 100vw;
+    }
+    
+    /* Ensure containers don't overflow */
+    .container,
+    .nav-container,
+    .home-content,
+    .about-content,
+    .contact-content {
+        width: 100%;
         max-width: 100%;
-        height: auto;
+        box-sizing: border-box;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 
@@ -94,9 +108,24 @@
 
 /* Tablet Portrait */
 @media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        position: relative;
+    }
+    
     .container {
-        max-width: 540px;
+        max-width: 100%;
         padding: 0 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .nav-container {
+        padding: 0 15px;
+        width: 100%;
+        box-sizing: border-box;
     }
     
     .section {
@@ -156,6 +185,38 @@
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .home-section {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .background-animation,
+    .floating-shapes,
+    .particles-container {
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    .particles-container canvas {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    .shape {
+        max-width: calc(100vw - 20px);
+    }
+    
+    .shape-3 {
+        left: auto !important;
+        right: 10% !important;
+        max-width: 60px;
     }
     
     .title-line {

@@ -229,6 +229,8 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 70px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .nav-logo {
@@ -313,6 +315,8 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 .background-animation {
@@ -322,6 +326,8 @@ body {
     width: 100%;
     height: 100%;
     z-index: 1;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 .floating-shapes {
@@ -329,6 +335,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    max-width: 100%;
 }
 
 .shape {
@@ -361,6 +368,7 @@ body {
     top: 40%;
     left: 80%;
     animation-delay: 4s;
+    max-width: calc(100% - 60px);
 }
 
 .shape-4 {
@@ -388,6 +396,8 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .home-content {
