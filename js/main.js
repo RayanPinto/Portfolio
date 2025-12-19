@@ -313,6 +313,11 @@ function initContactForm() {
     
     if (!contactForm) return;
     
+    // Initialize EmailJS
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init('x-fYelpZax_BwRchd');
+    }
+    
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -331,14 +336,48 @@ function initContactForm() {
             return;
         }
         
-        // Simulate form submission
+        // Check if EmailJS is loaded
+        if (typeof emailjs === 'undefined') {
+            showNotification('Email service is not available. Please try again later.', 'error');
+            return;
+        }
+        
+        // Disable submit button and show loading state
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.innerHTML;
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
+        
+        // Show sending notification
         showNotification('Sending message...', 'info');
         
-        // Simulate API call
-        setTimeout(() => {
-            showNotification('Message sent successfully!', 'success');
-            contactForm.reset();
-        }, 2000);
+        // Prepare EmailJS parameters
+        const templateParams = {
+            from_name: data.name,
+            from_email: data.email,
+            subject: data.subject,
+            message: data.message
+        };
+        
+        // Send email using EmailJS
+        emailjs.send('service_fmepm46', '2esduje', templateParams)
+            .then(function(response) {
+                // Success
+                showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+                contactForm.reset();
+                
+                // Re-enable submit button
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+            }, function(error) {
+                // Error
+                console.error('EmailJS Error:', error);
+                showNotification('Failed to send message. Please try again or contact me directly via email.', 'error');
+                
+                // Re-enable submit button
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+            });
     });
     
     // Form input focus effects (removed floating label animations)
