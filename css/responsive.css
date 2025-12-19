@@ -173,7 +173,9 @@
     }
     
     .education-item .education-details {
-        padding-left: 0 !important;
+        padding: 1.5rem !important;
+        padding-left: 0.8rem !important;
+        padding-right: 1.2rem !important;
         flex: 1;
         min-width: 0;
     }
@@ -855,10 +857,9 @@
     }
     
     .education-item .education-details {
-        padding-left: 0 !important;
-        padding-right: 0.5rem !important;
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
+        padding: 1rem !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.8rem !important;
         margin-left: 0 !important;
         flex: 1;
     }
