@@ -942,22 +942,39 @@ body {
 /* Responsive Design for Education and Awards */
 @media (max-width: 768px) {
     .education-timeline::before {
-        left: 30px;
+        left: 25px;
     }
     
     .education-item {
         flex-direction: row !important;
+        gap: 1rem;
+        align-items: flex-start;
     }
     
     .education-item .education-details {
         text-align: left !important;
-        padding-left: 3rem !important;
+        padding-left: 4.5rem !important;
         padding-right: 1rem !important;
+        margin-left: 0;
+        margin-right: 0;
+        min-width: 0;
+        width: 100%;
     }
     
     .education-icon {
         position: absolute;
         left: 0;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+        margin-right: 0;
+    }
+    
+    .education-item {
+        position: relative;
+        padding-left: 0;
+        width: 100%;
     }
     
     .awards-grid {
