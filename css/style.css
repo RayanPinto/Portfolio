@@ -127,6 +127,13 @@ body {
     color: var(--text-color);
     margin-bottom: 1rem;
     position: relative;
+    letter-spacing: -0.02em;
+    word-spacing: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga" 1, "kern" 1;
+    text-rendering: geometricPrecision;
 }
 
 .section-title::after {

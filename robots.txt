@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /assets/*.pdf
+
+# Sitemap location
+Sitemap: https://rayanpinto.github.io/sitemap.xml
+
+# Crawl delay (optional, adjust as needed)
+Crawl-delay: 1
+
