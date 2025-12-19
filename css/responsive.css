@@ -343,6 +343,13 @@
     
     .about-highlights {
         grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+    
+    .highlight {
+        width: 100%;
+        min-height: 60px;
+        padding: 1rem;
     }
     
     .about-stats {

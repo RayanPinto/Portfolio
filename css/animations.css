@@ -37,18 +37,23 @@
   margin-bottom: 2rem;
   width: 100%;
   max-width: 600px;
-  justify-items: center;
+  justify-items: stretch;
 }
 
 .highlight {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.8rem;
-  padding: 1rem;
+  padding: 1.2rem 1rem;
   background: rgba(0, 171, 240, 0.1);
   border-radius: var(--radius-md);
   border: 1px solid rgba(0, 171, 240, 0.2);
   transition: all var(--transition-normal);
+  width: 100%;
+  min-height: 70px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .highlight:hover {
@@ -64,6 +69,8 @@
 .highlight span {
   color: var(--text-color);
   font-weight: 500;
+  text-align: center;
+  flex: 1;
 }
 
 .about-stats {
