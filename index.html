@@ -1339,6 +1339,14 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.16/typed.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <!-- Initialize EmailJS -->
+    <script>
+        // Initialize EmailJS when script loads
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init('x-fYelpZax_BwRchd');
+        }
+    </script>
 
     <!-- Custom JavaScript -->
     <script src="js/main.js"></script>

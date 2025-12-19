@@ -313,9 +313,22 @@ function initContactForm() {
     
     if (!contactForm) return;
     
-    // Initialize EmailJS
-    if (typeof emailjs !== 'undefined') {
-        emailjs.init('x-fYelpZax_BwRchd');
+    // Initialize EmailJS when available
+    function initEmailJS() {
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init('x-fYelpZax_BwRchd');
+            console.log('EmailJS initialized');
+        } else {
+            // Retry after a short delay if EmailJS isn't loaded yet
+            setTimeout(initEmailJS, 100);
+        }
+    }
+    
+    // Start initialization
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initEmailJS);
+    } else {
+        initEmailJS();
     }
     
     contactForm.addEventListener('submit', function(e) {
@@ -336,9 +349,9 @@ function initContactForm() {
             return;
         }
         
-        // Check if EmailJS is loaded
+        // Check if EmailJS is loaded and initialized
         if (typeof emailjs === 'undefined') {
-            showNotification('Email service is not available. Please try again later.', 'error');
+            showNotification('Email service is not available. Please refresh the page and try again.', 'error');
             return;
         }
         
@@ -364,10 +377,11 @@ function initContactForm() {
             message: data.message
         };
         
-        // Send email using EmailJS
-        emailjs.send('service_fmepm46', '2esduje', templateParams)
+        // Send email using EmailJS (v4 API)
+        emailjs.send('service_fmepm46', 'template_6qikaxp', templateParams, 'x-fYelpZax_BwRchd')
             .then(function(response) {
                 // Success
+                console.log('EmailJS Success:', response.status, response.text);
                 showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
                 contactForm.reset();
                 
@@ -377,8 +391,20 @@ function initContactForm() {
                 buttonIcon.className = originalIconClass;
             }, function(error) {
                 // Error
-                console.error('EmailJS Error:', error);
-                showNotification('Failed to send message. Please try again or contact me directly via email.', 'error');
+                console.error('EmailJS Error Details:', {
+                    status: error.status,
+                    text: error.text,
+                    error: error
+                });
+                
+                let errorMessage = 'Failed to send message. ';
+                if (error.text) {
+                    errorMessage += error.text;
+                } else {
+                    errorMessage += 'Please try again or contact me directly via email.';
+                }
+                
+                showNotification(errorMessage, 'error');
                 
                 // Re-enable submit button
                 submitButton.disabled = false;
