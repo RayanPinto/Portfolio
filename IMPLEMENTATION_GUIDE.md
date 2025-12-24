@@ -104,3 +104,4 @@ Add JSON-LD scripts for Person, WebSite, and Portfolio schemas.
 - **Validation**: W3C Validator, Schema.org Validator
 - **Accessibility**: WAVE, axe DevTools
 
+

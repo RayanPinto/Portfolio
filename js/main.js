@@ -97,15 +97,33 @@ function initNavigation() {
     // Navbar scroll effect - optimized for mobile
     let ticking = false;
     function updateNavbar() {
+        const currentTheme = document.body.getAttribute('data-theme');
+        const isLight = currentTheme === 'light';
+        
         if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(8, 27, 41, 0.98)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            navbar.classList.add('scrolled');
+            if (!isLight) {
+                navbar.style.background = 'rgba(8, 27, 41, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = '';
+                navbar.style.boxShadow = '';
+            }
         } else {
-            navbar.style.background = 'rgba(8, 27, 41, 0.95)';
-            navbar.style.boxShadow = 'none';
+            navbar.classList.remove('scrolled');
+            if (!isLight) {
+                navbar.style.background = 'rgba(8, 27, 41, 0.95)';
+                navbar.style.boxShadow = 'none';
+            } else {
+                navbar.style.background = '';
+                navbar.style.boxShadow = '';
+            }
         }
         ticking = false;
     }
+    
+    // Initial navbar setup based on theme
+    updateNavbar();
     
     window.addEventListener('scroll', function() {
         if (!ticking) {
@@ -167,6 +185,26 @@ function initThemeToggle() {
         body.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         updateThemeIcon(newTheme);
+        
+        // Update navbar background for new theme - clear inline styles for light mode
+        const navbar = document.getElementById('navbar');
+        if (navbar) {
+            if (newTheme === 'light') {
+                // Remove inline styles to let CSS handle it
+                navbar.style.background = '';
+                navbar.style.boxShadow = '';
+            } else {
+                // Update for dark mode
+                const scrollY = window.scrollY;
+                if (scrollY > 100) {
+                    navbar.style.background = 'rgba(8, 27, 41, 0.98)';
+                    navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    navbar.style.background = 'rgba(8, 27, 41, 0.95)';
+                    navbar.style.boxShadow = 'none';
+                }
+            }
+        }
         
         // Add transition effect
         body.style.transition = 'background-color 0.3s ease, color 0.3s ease';

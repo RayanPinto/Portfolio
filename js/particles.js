@@ -8,15 +8,15 @@ class ParticlesAnimation {
         this.animationId = null;
         this.mouse = { x: 0, y: 0 };
         this.settings = {
-            particleCount: 50,
-            particleSize: 2,
-            particleSpeed: 0.5,
-            connectionDistance: 150,
-            connectionOpacity: 0.3,
+            particleCount: 80,
+            particleSize: 3,
+            particleSpeed: 1.2,
+            connectionDistance: 180,
+            connectionOpacity: 0.4,
             particleColor: '#00abf0',
             connectionColor: '#00abf0',
             mouseInteraction: true,
-            mouseRadius: 100
+            mouseRadius: 150
         };
         
         this.init();
@@ -96,27 +96,33 @@ class ParticlesAnimation {
     }
     
     updateParticles() {
-        this.particles.forEach(particle => {
-            // Update position
-            particle.x += particle.vx;
-            particle.y += particle.vy;
+        this.particles.forEach((particle, index) => {
+            // Add wave-like movement for more dynamic patterns
+            const waveX = Math.sin(particle.pulse + index * 0.1) * 0.5;
+            const waveY = Math.cos(particle.pulse + index * 0.15) * 0.5;
             
-            // Bounce off edges
+            // Update position with wave effect
+            particle.x += particle.vx + waveX;
+            particle.y += particle.vy + waveY;
+            
+            // Bounce off edges with slight randomization
             if (particle.x < 0 || particle.x > this.canvas.width) {
                 particle.vx *= -1;
+                particle.vx += (Math.random() - 0.5) * 0.2; // Add randomness
             }
             if (particle.y < 0 || particle.y > this.canvas.height) {
                 particle.vy *= -1;
+                particle.vy += (Math.random() - 0.5) * 0.2; // Add randomness
             }
             
             // Keep particles within bounds
             particle.x = Math.max(0, Math.min(this.canvas.width, particle.x));
             particle.y = Math.max(0, Math.min(this.canvas.height, particle.y));
             
-            // Update pulse
-            particle.pulse += 0.02;
+            // Update pulse with varying speeds for different patterns
+            particle.pulse += 0.03 + (index % 3) * 0.01;
             
-            // Mouse interaction
+            // Mouse interaction with stronger effect
             if (this.settings.mouseInteraction && this.mouse.x > 0 && this.mouse.y > 0) {
                 const dx = this.mouse.x - particle.x;
                 const dy = this.mouse.y - particle.y;
@@ -126,14 +132,20 @@ class ParticlesAnimation {
                     const force = (this.settings.mouseRadius - distance) / this.settings.mouseRadius;
                     const angle = Math.atan2(dy, dx);
                     
-                    particle.vx -= Math.cos(angle) * force * 0.1;
-                    particle.vy -= Math.sin(angle) * force * 0.1;
+                    particle.vx -= Math.cos(angle) * force * 0.15;
+                    particle.vy -= Math.sin(angle) * force * 0.15;
                 }
             }
             
-            // Apply friction
-            particle.vx *= 0.99;
-            particle.vy *= 0.99;
+            // Apply minimal friction to maintain movement
+            particle.vx *= 0.995;
+            particle.vy *= 0.995;
+            
+            // Add slight random drift for organic movement
+            if (Math.random() < 0.02) {
+                particle.vx += (Math.random() - 0.5) * 0.1;
+                particle.vy += (Math.random() - 0.5) * 0.1;
+            }
         });
     }
     
@@ -164,7 +176,12 @@ class ParticlesAnimation {
     
     drawConnections() {
         this.ctx.save();
-        this.ctx.strokeStyle = this.settings.connectionColor;
+        
+        // Create gradient for connections
+        const gradient = this.ctx.createLinearGradient(0, 0, this.canvas.width, this.canvas.height);
+        gradient.addColorStop(0, this.settings.connectionColor);
+        gradient.addColorStop(0.5, '#00d4ff');
+        gradient.addColorStop(1, this.settings.connectionColor);
         
         for (let i = 0; i < this.particles.length; i++) {
             for (let j = i + 1; j < this.particles.length; j++) {
@@ -175,6 +192,10 @@ class ParticlesAnimation {
                 if (distance < this.settings.connectionDistance) {
                     const opacity = (this.settings.connectionDistance - distance) / this.settings.connectionDistance;
                     this.ctx.globalAlpha = opacity * this.settings.connectionOpacity;
+                    
+                    // Vary line width based on distance for depth effect
+                    this.ctx.lineWidth = Math.max(0.5, 2 * (1 - distance / this.settings.connectionDistance));
+                    this.ctx.strokeStyle = this.settings.connectionColor;
                     
                     this.ctx.beginPath();
                     this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
