@@ -32,26 +32,30 @@ iframe {
     --success-color: #10b981;
     --warning-color: #f59e0b;
     --error-color: #ef4444;
-    
+
+    /* Card Variables */
+    --card-bg: rgba(17, 46, 66, 0.8);
+    --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+
     /* Typography */
     --font-primary: 'Inter', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
-    
+
     /* Spacing */
     --section-padding: 100px 0;
     --container-padding: 0 20px;
-    
+
     /* Transitions */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
-    
+
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    
+
     /* Border Radius */
     --radius-sm: 4px;
     --radius-md: 8px;
@@ -67,23 +71,27 @@ iframe {
     --text-color: #1e293b;
     --text-muted: #64748b;
     --border-color: #e2e8f0;
+
+    /* Light Theme Card Overrides */
+    --card-bg: rgba(241, 245, 249, 0.9);
+    --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 html {
     scroll-behavior: smooth;
     font-size: 16px;
-    overflow-x: hidden !important;
-    overflow-y: auto;
     width: 100%;
     max-width: 100%;
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-y;
-    -ms-overflow-style: none !important;
+    overflow-x: hidden !important;
     scrollbar-width: none !important;
+    /* Firefox */
+    -ms-overflow-style: none !important;
+    /* IE/Edge */
 }
 
 html::-webkit-scrollbar {
     display: none !important;
+    /* Chrome/Safari/Brave */
     width: 0 !important;
     height: 0 !important;
 }
@@ -104,16 +112,11 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    overflow-x: hidden !important;
-    overflow-y: auto;
     width: 100%;
     max-width: 100%;
     position: relative;
     transition: background-color var(--transition-normal), color var(--transition-normal);
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-y;
-    will-change: scroll-position;
-    -ms-overflow-style: none !important;
+    overflow-x: hidden !important;
     scrollbar-width: none !important;
 }
 
@@ -140,46 +143,43 @@ body::-webkit-scrollbar {
     max-width: 100%;
     overflow-x: hidden !important;
     overflow-y: visible !important;
-    -webkit-overflow-scrolling: touch;
-    transform: translateZ(0);
-    will-change: scroll-position;
-    scroll-margin-top: 80px; /* Account for fixed navbar */
+    /* Force expansion */
+    height: auto !important;
+    /* Remove any height constraints */
+    min-height: min-content;
 }
 
 .skills-section,
 .projects-section,
-.awards-section {
+.awards-section,
+.education-section {
     overflow-x: hidden !important;
     overflow-y: visible !important;
     width: 100% !important;
     max-width: 100% !important;
+    height: auto !important;
 }
 
 .skills-section *,
 .projects-section *,
-.awards-section * {
+.awards-section *,
+.education-section * {
     max-width: 100%;
     box-sizing: border-box;
-    overflow-x: hidden !important;
 }
 
 .skill-category,
 .skills-grid,
-.skill-item {
-    overflow-x: hidden !important;
-    overflow-y: visible !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box;
-}
-
+.skill-item,
 .projects-grid,
-.project-card {
-    overflow-x: hidden !important;
+.project-card,
+.awards-grid,
+.award-card,
+.education-timeline,
+.education-item {
     overflow-y: visible !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box;
+    height: auto !important;
+    max-height: none !important;
 }
 
 .section * {
@@ -281,12 +281,10 @@ body::-webkit-scrollbar {
     left: 0;
     bottom: 0;
     right: 0;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-    );
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
     animation: shimmer 1.5s infinite;
 }
 
@@ -311,16 +309,20 @@ body::-webkit-scrollbar {
     0% {
         transform: translateX(-100%);
     }
+
     100% {
         transform: translateX(100%);
     }
 }
 
 @keyframes textShimmer {
-    0%, 100% {
+
+    0%,
+    100% {
         background-position: 0% 50%;
         filter: drop-shadow(0 0 10px rgba(0, 171, 240, 0.5));
     }
+
     50% {
         background-position: 100% 50%;
         filter: drop-shadow(0 0 15px rgba(0, 171, 240, 0.8));
@@ -328,8 +330,13 @@ body::-webkit-scrollbar {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Custom Cursor */
@@ -557,8 +564,15 @@ body::-webkit-scrollbar {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+    }
 }
 
 .particles-container {
@@ -600,9 +614,19 @@ body::-webkit-scrollbar {
 }
 
 @keyframes wave {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(20deg); }
-    75% { transform: rotate(-20deg); }
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(20deg);
+    }
+
+    75% {
+        transform: rotate(-20deg);
+    }
 }
 
 .greeting-text {
@@ -653,8 +677,16 @@ body::-webkit-scrollbar {
 }
 
 @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
 }
 
 .home-description {
@@ -748,13 +780,13 @@ body::-webkit-scrollbar {
 }
 
 .profile-card {
-    background: rgba(17, 46, 66, 0.8);
+    background: var(--card-bg);
     backdrop-filter: blur(10px);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-xl);
     padding: 3.5rem;
     text-align: center;
-    box-shadow: var(--shadow-xl);
+    box-shadow: var(--card-shadow);
     min-width: 380px;
     width: 100%;
     max-width: 480px;
@@ -805,8 +837,17 @@ body::-webkit-scrollbar {
 }
 
 @keyframes pulse {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
-    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.5; }
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.5;
+    }
 }
 
 .profile-stats {
@@ -871,8 +912,17 @@ body::-webkit-scrollbar {
 }
 
 @keyframes scroll {
-    0%, 100% { transform: translateY(0); opacity: 1; }
-    50% { transform: translateY(10px); opacity: 0.5; }
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(10px);
+        opacity: 0.5;
+    }
 }
 
 /* Responsive Design */
@@ -1162,20 +1212,21 @@ body::-webkit-scrollbar {
 
 /* Responsive Design for Education and Awards */
 @media (max-width: 768px) {
+
     /* Ensure proper scroll offset on mobile */
     .section {
         scroll-margin-top: 80px;
     }
-    
+
     .education-timeline {
         padding-left: 0;
         margin-left: 0;
     }
-    
+
     .education-timeline::before {
         left: 25px;
     }
-    
+
     .education-item {
         flex-direction: row !important;
         gap: 1rem;
@@ -1186,12 +1237,12 @@ body::-webkit-scrollbar {
         width: 100%;
         box-sizing: border-box;
     }
-    
+
     .education-item:nth-child(odd),
     .education-item:nth-child(even) {
         flex-direction: row !important;
     }
-    
+
     .education-item .education-details {
         text-align: center !important;
         padding: 1.5rem !important;
@@ -1205,7 +1256,7 @@ body::-webkit-scrollbar {
         box-sizing: border-box;
         position: relative;
     }
-    
+
     .education-icon {
         position: relative !important;
         left: auto !important;
@@ -1218,20 +1269,20 @@ body::-webkit-scrollbar {
         margin-left: 0;
         z-index: 1;
     }
-    
+
     .awards-section {
         overflow-x: hidden !important;
         width: 100% !important;
         max-width: 100% !important;
     }
-    
+
     .awards-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         width: 100%;
         max-width: 100%;
     }
-    
+
     .award-card {
         padding: 2rem;
     }
