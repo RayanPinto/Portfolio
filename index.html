@@ -53,7 +53,7 @@
   <!-- CSS Libraries -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Michroma&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Teko:wght@500;600;700&display=swap"
     rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
@@ -61,6 +61,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/animations.css" />
   <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/cyber-theme.css" />
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -156,57 +157,23 @@
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <div class="nav-logo">
-        <span class="logo-text">Rayan</span>
+        <span class="logo-text">RP</span>
         <span class="logo-dot">.</span>
       </div>
 
-      <div class="nav-menu" id="nav-menu">
-        <a href="#home" class="nav-link active" data-section="home">
-          <i class="fas fa-home"></i>
-          <span>Home</span>
-        </a>
-        <a href="#about" class="nav-link" data-section="about">
-          <i class="fas fa-user"></i>
-          <span>About</span>
-        </a>
-        <a href="#experience" class="nav-link" data-section="experience">
-          <i class="fas fa-briefcase"></i>
-          <span>Experience</span>
-        </a>
-        <a href="#skills" class="nav-link" data-section="skills">
-          <i class="fas fa-code"></i>
-          <span>Skills</span>
-        </a>
-        <a href="#projects" class="nav-link" data-section="projects">
-          <i class="fas fa-project-diagram"></i>
-          <span>Projects</span>
-        </a>
-        <a href="#education" class="nav-link" data-section="education">
-          <i class="fas fa-graduation-cap"></i>
-          <span>Education</span>
-        </a>
-        <a href="#awards" class="nav-link" data-section="awards">
-          <i class="fas fa-trophy"></i>
-          <span>Awards</span>
-        </a>
-        <a href="#contact" class="nav-link" data-section="contact">
-          <i class="fas fa-envelope"></i>
-          <span>Contact</span>
-        </a>
-      </div>
-
-      <div class="nav-toggle" id="nav-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <!-- Theme Toggle -->
-      <div class="theme-toggle" id="theme-toggle">
-        <i class="fas fa-moon"></i>
+      <div class="nav-audio">
+        <a href="#contact" class="say-hello-btn">SAY HELLO</a>
       </div>
     </div>
   </nav>
+
+  <!-- Floating Bottom Nav -->
+  <div class="floating-nav">
+    <a href="#about">01. ABOUT</a>
+    <a href="#experience">02. EXP</a>
+    <a href="#projects">03. WORK</a>
+    <a href="#skills">04. SKILLS</a>
+  </div>
 
   <!-- Main Content -->
   <main class="main-content">
@@ -224,63 +191,22 @@
       </div>
 
       <div class="container">
-        <div class="home-content">
-          <div class="home-text" data-aos="fade-up" data-aos-delay="200">
-            <div class="greeting">
-              <span class="wave">👋</span>
-              <span class="greeting-text">Hello, I'm</span>
-            </div>
-
-            <h1 class="main-title">
-              <span class="title-line">Rayan Pinto</span>
-              <span class="title-subtitle">Software Engineer | CS & Business Systems Student</span>
-            </h1>
-
-            <div class="typing-container">
-              <span class="typing-text" id="typing-text"></span>
-              <span class="typing-cursor">|</span>
-            </div>
-
-            <p class="home-description">
-              Computer Science and Business Systems student with a solid
-              foundation in full-stack development and hands-on experience
-              building scalable web and mobile applications.
-            </p>
-
-            <div class="home-buttons">
-              <a href="#projects" class="btn btn-primary ripple-effect">
-                <span>View My Work</span>
-                <i class="fas fa-arrow-right"></i>
-                <a href="https://drive.google.com/uc?export=download&id=1OVjXKelHLoLMy36PRj_eZEJMrKw6nAMg"
-                  class="btn btn-secondary ripple-effect" target="_blank" rel="noopener">
-                  <span>Download CV</span>
-                  <i class="fas fa-download"></i>
-                </a>
-
-            </div>
-          </div>
-
-          <div class="home-visual" data-aos="fade-left" data-aos-delay="400">
-            <div class="profile-card">
-              <div class="profile-image">
-                <img src="about.jpg" alt="Rayan Pinto" class="profile-img" />
-                <div class="profile-glow"></div>
+        <div class="relative-container">
+          <div class="cyber-home-content">
+            <div class="cyber-huge-text">
+              <h1 class="glitch-name">
+                <span class="name-part">Rayan</span><br />
+                <span class="name-part">Pinto</span>
+              </h1>
+              <h2 class="cyber-portfolio">PORTFOLIO &copy;2026</h2>
+              <div class="cyber-roles">
+                <span>SOFTWARE ENGINEER</span> <i class="fas fa-dharmachakra"></i> <span>FULL STACK</span> <i
+                  class="fas fa-dharmachakra"></i> <span>AI & ML</span>
               </div>
-              <div class="profile-divider"></div>
-              <div class="profile-stats">
-                <div class="stat">
-                  <span class="stat-number">6</span>
-                  <span class="stat-label">Awards</span>
-                </div>
-                <div class="stat">
-                  <span class="stat-number">15+</span>
-                  <span class="stat-label">Projects</span>
-                </div>
-                <div class="stat">
-                  <span class="stat-number">20+</span>
-                  <span class="stat-label">Technologies</span>
-                </div>
-              </div>
+              <div class="cyber-scroll-msg">SCROLL TO EXPLORE</div>
+            </div>
+            <div class="cyber-3d-object">
+              <div class="hologram-cube"></div>
             </div>
           </div>
         </div>
@@ -400,343 +326,59 @@
           <p class="section-subtitle">Technologies I work with</p>
         </div>
 
-        <div class="skills-content">
-          <div class="skills-categories">
-            <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-              <h3 class="category-title">
-                <i class="fas fa-code"></i>
-                Programming Languages
-              </h3>
-              <div class="skills-grid">
-                <div class="skill-item" data-skill="C">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" />
-                  </div>
-                  <div class="skill-name">C</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="90"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="C++">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
-                      alt="C++" />
-                  </div>
-                  <div class="skill-name">C++</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="85"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="Python">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                      alt="Python" />
-                  </div>
-                  <div class="skill-name">Python</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="95"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="Java">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
-                  </div>
-                  <div class="skill-name">Java</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="80"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="JavaScript">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                      alt="JavaScript" />
-                  </div>
-                  <div class="skill-name">JavaScript</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="90"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="Golang">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Golang" />
-                  </div>
-                  <div class="skill-name">Golang</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="75"></div>
-                  </div>
-                </div>
-              </div>
+        <div class="cyber-skills-content">
+          <div class="cyber-skill-group">
+            <h3 class="cyber-category">01 // LANGUAGES</h3>
+            <div class="cyber-tech-tags">
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" class="skill-svg" alt="C" /> C</span>
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="skill-svg" alt="C++" /> C++</span>
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="skill-svg" alt="Python" /> Python</span>
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="skill-svg" alt="Java" /> Java</span>
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="skill-svg" alt="JS" /> JavaScript</span>
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" class="skill-svg" alt="Go" /> Golang</span>
             </div>
+          </div>
 
-            <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-              <h3 class="category-title">
-                <i class="fas fa-mobile-alt"></i>
-                Web & Mobile Development
-              </h3>
-              <div class="skills-grid">
-                <div class="skill-item" data-skill="Flutter">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
-                      alt="Flutter" />
-                  </div>
-                  <div class="skill-name">Flutter</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="90"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="React.js">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                      alt="React.js" />
-                  </div>
-                  <div class="skill-name">React.js</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="85"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="NodeJS">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                      alt="NodeJS" />
-                  </div>
-                  <div class="skill-name">NodeJS</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="80"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="Express.js">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
-                      alt="Express.js" />
-                  </div>
-                  <div class="skill-name">Express.js</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="85"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="Django">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
-                      alt="Django" />
-                  </div>
-                  <div class="skill-name">Django</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="80"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="Vite">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg"
-                      alt="Vite" />
-                  </div>
-                  <div class="skill-name">Vite</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="75"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="FastAPI">
-                  <div class="skill-icon" style="display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-bolt" style="font-size: 2rem; color: white;"></i>
-                  </div>
-                  <div class="skill-name">FastAPI</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="85"></div>
-                  </div>
-                </div>
-              </div>
+          <div class="cyber-skill-group">
+            <h3 class="cyber-category">02 // WEB & MOBILE</h3>
+            <div class="cyber-tech-tags">
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" class="skill-svg" alt="Flutter" /> Flutter</span>
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="skill-svg" alt="React" /> React.js</span>
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="skill-svg" alt="Node" /> NodeJS</span>
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" style="filter: invert(1);" class="skill-svg" alt="Express" /> Express.js</span>
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" class="skill-svg" alt="Django" /> Django</span>
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" class="skill-svg" alt="Vite" /> Vite</span>
+              <span class="cyber-tag"><i class="fas fa-bolt skill-svg-icon"></i> FastAPI</span>
             </div>
+          </div>
 
-            <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
-              <h3 class="category-title">
-                <i class="fas fa-brain"></i>
-                AI & Machine Learning
-              </h3>
-              <div class="skills-grid">
-                <div class="skill-item" data-skill="TensorFlow">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
-                      alt="TensorFlow" />
-                  </div>
-                  <div class="skill-name">TensorFlow</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="85"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="NumPy">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
-                      alt="NumPy" />
-                  </div>
-                  <div class="skill-name">NumPy</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="88"></div>
-                  </div>
-                </div>
-
-                <!-- Pandas -->
-                <div class="skill-item" data-skill="Pandas">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
-                      alt="Pandas" />
-                  </div>
-                  <div class="skill-name">Pandas</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="92"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="Scikit-learn">
-                  <div class="skill-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
-                      alt="Scikit-learn" />
-                  </div>
-                  <div class="skill-name">Scikit-learn</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="90"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="Whisper">
-                  <div class="skill-icon" style="display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-microphone" style="font-size: 2rem; color: white;"></i>
-                  </div>
-                  <div class="skill-name">Whisper</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="85"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="CNN">
-                  <div class="skill-icon" style="display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-image" style="font-size: 2rem; color: white;"></i>
-                  </div>
-                  <div class="skill-name">CNN</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="88"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="RNN">
-                  <div class="skill-icon" style="display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-sync-alt" style="font-size: 2rem; color: white;"></i>
-                  </div>
-                  <div class="skill-name">RNN</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="85"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="BERT">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="BERT"
-                      onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg'" />
-                  </div>
-                  <div class="skill-name">BERT</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="80"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="Transformer">
-                  <div class="skill-icon" style="display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-exchange-alt" style="font-size: 2rem; color: white;"></i>
-                  </div>
-                  <div class="skill-name">Transformer</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="82"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="ADK">
-                  <div class="skill-icon" style="display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-robot" style="font-size: 2rem; color: white;"></i>
-                  </div>
-                  <div class="skill-name">ADK</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="85"></div>
-                  </div>
-                </div>
-              </div>
+          <div class="cyber-skill-group">
+            <h3 class="cyber-category">03 // AI & MACHINE LEARNING</h3>
+            <div class="cyber-tech-tags">
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" class="skill-svg" alt="TF" /> TensorFlow</span>
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" class="skill-svg" alt="NumPy" /> NumPy</span>
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" class="skill-svg" alt="Pandas" /> Pandas</span>
+              <span class="cyber-tag"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" class="skill-svg" alt="Scikit" /> Scikit-learn</span>
+              <span class="cyber-tag"><i class="fas fa-microphone skill-svg-icon"></i> Whisper</span>
+              <span class="cyber-tag"><i class="fas fa-image skill-svg-icon"></i> CNN</span>
+              <span class="cyber-tag"><i class="fas fa-sync-alt skill-svg-icon"></i> RNN</span>
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" class="skill-svg" alt="BERT" /> BERT</span>
+              <span class="cyber-tag"><i class="fas fa-exchange-alt skill-svg-icon"></i> Transformer</span>
+              <span class="cyber-tag"><i class="fas fa-robot skill-svg-icon"></i> ADK</span>
             </div>
+          </div>
 
-            <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
-              <h3 class="category-title">
-                <i class="fas fa-database"></i>
-                Databases & Tools
-              </h3>
-              <div class="skills-grid">
-                <div class="skill-item" data-skill="MongoDB">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-                      alt="MongoDB" />
-                  </div>
-                  <div class="skill-name">MongoDB</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="80"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="MySQL">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-                      alt="MySQL" />
-                  </div>
-                  <div class="skill-name">MySQL</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="85"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="Firebase">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-                      alt="Firebase" />
-                  </div>
-                  <div class="skill-name">Firebase</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="80"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="Git">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
-                  </div>
-                  <div class="skill-name">Git</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="90"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="Docker">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-                      alt="Docker" />
-                  </div>
-                  <div class="skill-name">Docker</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="75"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="Mongoose">
-                  <div class="skill-icon" style="display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-layer-group" style="font-size: 2rem; color: white;"></i>
-                  </div>
-                  <div class="skill-name">Mongoose</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="80"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="PowerBI">
-                  <div class="skill-icon" style="display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-chart-bar" style="font-size: 2rem; color: white;"></i>
-                  </div>
-                  <div class="skill-name">PowerBI</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="75"></div>
-                  </div>
-                </div>
-                <div class="skill-item" data-skill="Minikube">
-                  <div class="skill-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
-                      alt="Minikube"
-                      onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'" />
-                  </div>
-                  <div class="skill-name">Minikube</div>
-                  <div class="skill-progress">
-                    <div class="progress-bar" data-progress="80"></div>
-                  </div>
-                </div>
-              </div>
+          <div class="cyber-skill-group">
+            <h3 class="cyber-category">04 // DATABASES & TOOLS</h3>
+            <div class="cyber-tech-tags">
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="skill-svg" alt="Mongo" /> MongoDB</span>
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="skill-svg" alt="MySQL" /> MySQL</span>
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="skill-svg" alt="Firebase" /> Firebase</span>
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="skill-svg" alt="Git" /> Git</span>
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="skill-svg" alt="Docker" /> Docker</span>
+              <span class="cyber-tag"><i class="fas fa-layer-group skill-svg-icon"></i> Mongoose</span>
+              <span class="cyber-tag"><i class="fas fa-chart-bar skill-svg-icon"></i> PowerBI</span>
+              <span class="cyber-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" class="skill-svg" alt="K8s" /> Minikube</span>
             </div>
           </div>
         </div>
@@ -766,14 +408,18 @@
             <div class="project-content">
               <h3 class="project-title">Query Parallax</h3>
               <p class="project-description">
-                A distributed Map-Reduce query engine on Kubernetes that
-                auto-scales workers to achieve 4-10x faster SQL execution.
+                Built a distributed Map-Reduce engine parallelizing SQL queries across dynamic workers for 4-10x
+                speedup.
+                Implemented Kubernetes HPA to auto-scale worker pods based on CPU load, reducing resource usage by 40%.
+                Developed a real-time Next.js dashboard to visualize distributed query pipelines, worker metrics, and
+                system latency.
               </p>
               <div class="project-tech">
-                <span class="tech-tag">Golang</span>
+                <span class="tech-tag">Go</span>
                 <span class="tech-tag">Docker</span>
-                <span class="tech-tag">MiniKube</span>
-                <span class="tech-tag">PostgreSQL </span>
+                <span class="tech-tag">Minikube</span>
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">PostgreSQL</span>
               </div>
             </div>
           </div>
@@ -825,7 +471,7 @@
             <div class="project-content">
               <h3 class="project-title">
                 Multimodal Agentic Framework for Behavioral Profiling (Team
-                Project, In Progress)
+                Project)
               </h3>
               <p class="project-description">
                 Building a real-time system extracting 40+ behavioral signals
